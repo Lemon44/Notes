@@ -1,0 +1,58 @@
+Software is everywhere, it cost all of us an incredible amount of time and therefore money, pretty much everything depends on it. 
+
+It makes us a lot of money. It's fun. Can work in fields that uniquely interest us. "The Cathedral and the Bazaar" by Eric S. Raymond. 
+
+Software systems are among the most complex ever created.  We're not equipped to deal with the complexity. 
+
+***SLOC: Source Lines of Code
+
+Use other people's code to limit bugs in your own code. 
+
+Use a language that matches the problem at hand. This reduces lines of code, therefore reducing amount of bugs in the program. 
+
+Java was designed to use in set-top boxes (converts a digital television to analogue for viewing on a conventional set). 
+
+----------------------------------- insert C++ discussion. We talked shit about C++ for a while. 
+
+"The Magical Number Seven, Plus or Minus Two: Some Limits on Our Capacity for Procession Information" by George A. Miller
+- - - - - Why 7? 
+- Size of early hunting parties, leading to brain optimization
+- Size of sports teams, 
+- Digits in a phone number
+- Complexity of a computer program: live variables, nesting, cyclomatic complexity, etc. 
+- Visual Example: http://pipes.org/circle.html
+
+Complexities lead to comments, and don't do that! Simplify your code. 
+
+http://www.informationisbeautiful.net/visualizations/million-lines-of-code/
+
+Microsoft Word was originally released on Mac and only 3 years later was available for Windows. 
+--- This was because Mac was able to handle the artistry/calligraphy of the fonts in Microsoft Word
+
+Mariner 1:
+Space-craft that went way off course. 
+"The most consistent account was that the error was in hand-transcription of a mathematical symbol in the program specification, in a particular a missing overbar." (instead of taking an average, they used an instantaneous value). 
+
+Voltswagon Emissions Scandel: error in emissions testing
+
+Professional Engineers: Software Engineers could potentially be required to take an extra 5 years of training to become a PE, to reduce the inconsitencies, bugs, mistakes, etc. Raise Standards!
+
+Therac 25:
+Creates Radiation, Bad Software Design
+"It was involved in at least six accidents between 1985-1987, in which patients were given massive overdoses of radiation, approximately 100 times the intended dose."
+--The way the software was designed made it essentially untestable. 
+
+Ariane 5:
+"A data conversion from 64-bit floating point value to 16-bit signed integer value to be stored in a variable represneting horizontal bias caused a processor trap because the floating point value was too large to be represented by a a 16-bit signed integer."
+
+Mars Climate Orbiter:
+"Due to ground-based computer software which produced output in non-SI units of pound-seconds instead of the metric units of newton-seconds specified in the contract between NASA and Lockheed." 
+--Metric conversion error
+
+Stuxnet Virus
+
+Boeing 787 "Sparky":
+According to the FAA, there's a software bug in the 787 Dreamliner that can cause its electrical system to fail and, as a result, lead to "loss of control" of the plane.
+After 248 days, the plane would fall out of the sky. (2^31 100ths of a second)
+Even in 2015, our airplanes have integer overflow bugs. 
+
