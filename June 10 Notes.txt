@@ -2,3 +2,54 @@ Directed vs. Undirected
 
 Directed: you can only move along an edge in one direction (via arrows)
 Undirected: you can move along an edge in both directions
+
+Typical Graph Functions:
+
+Add/Remove vertex
+Add/Remove edge
+Weighted
+Directed
+Find Vertex
+Find Edge
+Next Edge
+Is Connected
+-----Given any vertex, can you get to any other vertex through legal edge movements?
+Is fully Connected
+-----Can every vertex reach every other vertex through single edge traversal? (boolean)
+Path Exists
+-----Does at least one path exist between two given vertices? (boolean)
+Dijkstra's Algorithm
+-----If a path between two vertices exists, find the shortest path from one vertex to the other
+
+How to Represent Graphs:
+
+Adjacency List
+-List of linked lists
+-Each vertex is the head of a linked list (or a list, array, etc)
+-The linked list holds their edges (and weights, if they exist)
+
+Adjacency Matrix
+-Matrix of vertices
+-Row and column titles are the vertices
+-Row-Column indices are edge weights (or edge existence)
+
+List vs. Matrix:
+
+List
+-More common
+-Usually easier to visualize/conceptualize
+-Adding edges is slow
+-Many algorithms are slow or very individualized
+
+Matrix
+-Most algorithms are extremely fast in comparison
+-Searches and traversals are very mathematical
+-Adding vertices is slow
+
+Library:
+
+Network X (https://networkx.github.io/)
+-Graphs, diagraphs, multigraphs
+-Well Tested (>90% coverage)
+-Very 00 compliant
+
