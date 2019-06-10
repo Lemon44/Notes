@@ -1,0 +1,16 @@
+Terminology:
+Program Requirements: 
+-User Stories
+-Statements that define and quantify what the program needs to do. Software Requirements tend to change.
+
+Functionl Requirements: 
+-What  a program needs to do. (yes or no)
+
+Non-Functional Requirements: 
+-The manner in which the functional requirements need to be achieved, performance, usability, maintainability
+-Tend to be on a scale, does not mean unimportant, don't directly effect the client's side of the project
+
+Design Constraints:
+-Statements that constrain the ways in which the software can be designed and implemented. 
+-Platform, language, DB, webapp, GUI, etc.
+
