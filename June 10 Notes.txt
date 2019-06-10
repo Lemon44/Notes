@@ -1,0 +1,4 @@
+Directed vs. Undirected
+
+Directed: you can only move along an edge in one direction (via arrows)
+Undirected: you can move along an edge in both directions
