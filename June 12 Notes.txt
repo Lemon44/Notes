@@ -1,0 +1,136 @@
+What is a dictonary?
+-key values
+
+Python is a bunch of dictionaries all of the time. 
+Everything in python is a dictionary.
+
+Recommendation: play to its strenghts: python's strength is dictionaries.
+***Take verbs and objects and do stuff
+
+One approach is to have a dictionary of dictionaries. 
+Outer dictioner could be verbs and inner could be objects. 
+
+Python allows you to ask for specific keys to dictionaries. 
+
+Python allows method references. 
+-You can pass functions as arguments (first class values)
+
+***EXAMPLE***
+def foo --(foo is a value)
+you can refer to this value any place. 
+---it can be the value in a dictionary.  
+
+key: {"go", foo}
+
+Leverage python's strenghts. Find out "why" this language was developed. 
+2 of python's strengths:
+dictionaries, method references
+
+No case statements, not a ton of if/else's 
+---dictionaries are a whole bunch of if/else's
+
+"pre-process", if something is "in" link to foo
+
+**ON TO CLASS NOTES**
+
+Non-Functional Requirements Examples:
+
+Performance
+Real-time Performance
+Maintainabiliyt
+-Readability
+-Modularity
+-Debuability
+-Traceability
+Modifiability
+-Lots will change
+
+Analysis:
+
+Static - analyzing the (non-running) code
+--linters, cyclomatic complexity (like a branching,loops, etc: "over seven", the number of possible paths through your program), method length, etc.
+-- Pylint, Sonar Cloud, radon, Checkstyle
+
+Dynamic - analyzing a running program
+--Spotbugs (JAVA), Valgrind (C++), Purify
+
+Testing:
+
+Major Types of Testing:
+
+-Acceptance: meets requirements of client
+BDD (Behavioral Driven Development)
+-Unit: TDD (Test Driven Development) per method 
+       -write a test before you write any functionality, should fail
+       -if you can't test your code, then don't write it at all
+       -commit early and often, when test pass
+       -when you break it, you know when it became broken, committing allows for easy retrieval
+-Integration: test an entire class, next level up from unit testing
+-System: Big things
+
+Blackbox testing, Redbox testing, Selenium, Quality Assurance, Alpha Testing, Beta Testing, etc. (other types of testing)
+It's expensive when the software has been released and has a bug, so it better be tested before in many arenas. 
+
+"How will I get this to work?, How will I get this to break? (TDD)"
+
+**  "Psychology of Programming"  **
+
+Unit Test:
+
+-Arguably the most important
+-Many modern SE methods use "test first"
+    -write a test
+    -make sure it fails
+    -write just enough code to make it work
+-If you don't know how to test it, how can you write it?
+-Correct frame of mind
+-Test-Driven Development
+
+**Only write code that you need right now! Don't think about tomorrow's code.
+
+Implementation:
+
+-Software Engineering tends to focus on requirements, design, and processes (SCRUM)
+    -"What does the requirement actually mean?"
+    -"What kind of extensibility does the program want to have?"
+-A bad implementation will ruin everything else
+
+Guideline: Style
+
+-Follow language styles
+-E.g.: "The Elements of Java Style" by Scott Ambler and Trevor Misfeldt
+-Style checkers, etc.
+
+"Good and Great" - book on leadership and management
+
+Management: process of finding out how each person is unique, what rewards them, how to find out who will be successful, what are people's pet's name
+Leadership: get people excited about doing particular process, the direction everyone is doing, gets everyone excited about a particular direction
+
+What are you good at? Based on strengths, at some point other skills will propel your career
+
+Guideline: Naming
+
+-Use good, descriptive names
+-Probably not Hungarian notation
+    -crszkvc30LastNameCol: a constant reference argument, holding the contents of a database column LastName of type varchar(30) which is part of the table's primary key
+-Type checking now done by IDE and compiler
+
+Guideline: Test
+
+-Every method has unit tests
+-50/50 test and program lines
+-Tests must be easy to run and run a lot
+
+Guideline: Use Libraries
+
+-Developed and tested by many others
+-Don't re-implementation
+    -You need to learn what is possible
+    -Yes, you may know how and think you're better, but you're not 
+    -Write something that no one else has written
+
+Keys in a dictionary form a set
+Values in a dictionary form a set (FALSE!)
+
+Never write a linked list. Nobody cares, ever again. 
+
