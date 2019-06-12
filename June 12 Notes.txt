@@ -134,3 +134,13 @@ Values in a dictionary form a set (FALSE!)
 
 Never write a linked list. Nobody cares, ever again. 
 
+Guideline: Reviews!! (Huge!)
+
+-Code reviews are very effective for improving quality
+-Knowing that someone else will be looking affeects you 
+-Others know things you don't 
+-Paired programming 
+-Helps you, facilitates learning 
+-Increases quality 
+
+
