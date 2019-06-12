@@ -143,4 +143,11 @@ Guideline: Reviews!! (Huge!)
 -Helps you, facilitates learning 
 -Increases quality 
 
+Guidelines:
+
+-We'll be covering other guidelines such as DRY (Don't repeat yourself), YAGNI, SOLID, Liscov substitution principle, etc. 
+
+SIDE NOTE: ** DJUG?, BJUG?, Pivotal Labs (for a job?)
+
+Become buzz word compliant.
 
