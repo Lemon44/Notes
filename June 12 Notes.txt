@@ -156,10 +156,17 @@ Agile:
 -Many different process that emphasize short release cycles and that allow changes in design
 -Focus on human and team aspects
 
-Waterfall: gather requirements, do the code, never go back, testing at the end (NOT GOOD) 
--Used in many other fields, because do not need things to change at the drop of a hat
+    Waterfall: gather requirements, do the code, never go back, testing at the end (NOT GOOD) 
+        -Used in many other fields, because do not need things to change at the drop of a hat
 
-What is architecture? -One level above design patterns
--How the pieces work together in your particular program 
--Design patterns is how exactly the plan is to do that 
+    What is architecture? -One level above design patterns
+        -How the pieces work together in your particular program 
+        -Design patterns is how exactly the plan is to do that 
+
+-short releases and iterations
+-incremental design
+-user involvement
+-lightweight documentation
+-informal communication
+-change
 
