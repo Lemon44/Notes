@@ -151,3 +151,12 @@ SIDE NOTE: ** DJUG?, BJUG?, Pivotal Labs (for a job?)
 
 Become buzz word compliant.
 
+Agile:
+
+-Many different process that emphasize short release cycles and that allow changes in design
+-Focus on human and team aspects
+
+Waterfall: gather requirements, do the code, never go back 
+
+What is architecture? -One level above design patterns
+
