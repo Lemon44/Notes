@@ -168,5 +168,6 @@ Agile:
 -user involvement
 -lightweight documentation
 -informal communication
--change
+-change(yes, and..)
 -give the client the least amount of functionality at the beginning so they have input at the beginning and they will be happier at the end looking at the growth
+
