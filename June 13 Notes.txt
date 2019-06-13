@@ -1,0 +1,45 @@
+Two Big Portions:
+	1. The game itself
+	2. The game engine
+
+Command Line Interface for user prompted commands.
+
+-Model Viewing Controller: the view is the CLI and the game engine is the controller. 
+
+-Should be able to go in and type commands, those commands should be hit by the game engine. 
+-The game engine should be able to save to the state.yml file. (They can start the game up at a later time).
+
+- **Luke recommends a "Read-Evaluation-Print-Loop" (REPL)
+	-Read input, evaluate something the input, you print it back and then read input again.  
+	-Usually upon evaluation you determine when the loop should end, in which case the loop ends: i.e. user enter "quit" etc.
+
+-The game engine has a map system: a cardinal map, go north, west, east, etc. 
+-This is where the "Adjacency List" comes in.  A structural design. 
+
+-Items that can be interacted with "design constraint"
+-User should be able to see which room you've visited
+-PC "agents, non character players" model/actor design pattern. 
+
+-State 1 (user, sword) --> Action 1 (monster comes) --> State 2 (user, new items) --> Action 2 (magic happens)
+
+-When we are saving the state of the game, we are saving all of the data.  Can we instead calculate the differences of the story? 
+    Answer: out of scope, definitely a possibility, maybe more difficult. 
+
+-What is YAML: doesn't nest as easily, configurations to run a program, Travis.yml file, a description of data, not a script. 
+
+Demonstration of what TDD Code actually looks like:
+
+File new python file. 
+-def addString(one, two):
+
+New file again, called TestAddString.py
+
+-import AddString
+-def test_addString():
+    **Base Case: when we have two empty strings, what should we do?
+    **
+    **If you want to make a module that you can import, you have to write __init__.py
+    **Otherwise you have to put the test cases all in the same folder. 
+     
+     assert addString(None, None)
+
