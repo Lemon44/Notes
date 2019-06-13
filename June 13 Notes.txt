@@ -30,15 +30,22 @@ Command Line Interface for user prompted commands.
 Demonstration of what TDD Code actually looks like:
 
 File new python file. 
+
+***MAIN METHOD***
 -def addString(one, two):
     if one is not None and two is not None:
         return one + two
     else:
         return None
-
+    elif one is None and isinstance(two, str):
+        return ""
+    elif two is None and isinstance(one, str):
+        return ""
 New file again, called TestAddString.py
 
 -import AddString
+
+***TEST CASE***
 -def test_addString():
     **Base Case: when we have two empty strings, what should we do?
     **
@@ -48,9 +55,17 @@ New file again, called TestAddString.py
      assert addString(None, None) == None
      assert addString("","") == ""
      assert len(addString("", "")) == len("") + len("")
+     assert addString(None, "") == ""
+     try:
+        addString(1, 'one')
+        assert False
+    except TypeError:
+        assert True
+    assert addString('hello','world') == 'helloworld'
 
 ** What is it called when a code works then doesn't "Broken" and "Regression"
 
 ** What is the difference between "is" and "=="
     - "is" only works if they're the same object "==" is for any value. 
 
+-After you write the test cases and changes to the code, refactor your code. 
