@@ -31,6 +31,10 @@ Demonstration of what TDD Code actually looks like:
 
 File new python file. 
 -def addString(one, two):
+    if one is not None and two is not None:
+        return one + two
+    else:
+        return None
 
 New file again, called TestAddString.py
 
@@ -41,5 +45,12 @@ New file again, called TestAddString.py
     **If you want to make a module that you can import, you have to write __init__.py
     **Otherwise you have to put the test cases all in the same folder. 
      
-     assert addString(None, None)
+     assert addString(None, None) == None
+     assert addString("","") == ""
+     assert len(addString("", "")) == len("") + len("")
+
+** What is it called when a code works then doesn't "Broken" and "Regression"
+
+** What is the difference between "is" and "=="
+    - "is" only works if they're the same object "==" is for any value. 
 
