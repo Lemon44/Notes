@@ -68,4 +68,7 @@ New file again, called TestAddString.py
 ** What is the difference between "is" and "=="
     - "is" only works if they're the same object "==" is for any value. 
 
--After you write the test cases and changes to the code, refactor your code. 
+- After you write the test cases and changes to the code, refactor your code. 
+- This particular example is 7 lines of test cases, for 8 lines in the method. 
+- This is good coverage.  Afterwards check to see if it runs, if it does, then commit.
+
