@@ -1,0 +1,34 @@
+Agile
+
+-Short releases and iterations
+-Incremental design (design all the time, architecture, refactoring, tests, etc)
+-User Involvement (The more user involvement, the more successful our project)
+-Lightweight documentation (Requirements)
+-Informal communication (User stories)
+-Change (Releases change things, sometimes an organization is unwilling to change: that's a problem)
+
+***If they have no weaknesses, don't hire them.  If they're too "great" their manager is trying to get rid of them***
+
+Why Agile?
+
+-Lengthy development times
+	-Overall development time not reduced but many releases
+-DIfficulty in responding to changing requirements
+	-Now change is expected and part of process
+-All requirements not understood at beginning
+-Too much reliance on heroic effort (We're all procrastinators, so now we have a product working all the time)
+-Processes too complex 
+	-Rational Unified Process (RUP): iterative software development process framework
+	-Process had too much overhead
+-Too much waste and duplication
+	-UML (unified modeling language) and code
+	-Code now source of design
+	
+***Documentations like API and Javadoc are very important***
+
+Agile Promises
+-Finished product always available
+-Sustainable normal effort by team
+-Deal with change
+
+***Henry Ford created weekends and improved productivity, Read about it?***
