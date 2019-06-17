@@ -86,5 +86,16 @@ Working Software over Comprehensive Documentation
 -Knowledge transferred in the team by direct interaction
 -**Produce no document, unless its need is immediate and significant!!
 
+-Customer Collaboration over Contract Negotiation
+-Successful projects get customer feedback early and often
+	-Don't wait, talk often
+-Best contracts specify how team and customers interact
 
+Responding to Change over Following a Plan:
 
+-Things change, all the time
+	-And you might as well accept it
+	-And your customers will be happier with the product
+-Team gains knowledge about problem
+-Customers gain knowledge about solution
+-Detailed plans for next two weeks, rough plans for three months, crude after that.
