@@ -32,3 +32,59 @@ Agile Promises
 -Deal with change
 
 ***Henry Ford created weekends and improved productivity, Read about it?***
+
+What Really Matters?
+
+-"Human interactions are complicated and never very crisp in their effects, but they matter more than any other aspect of the work." -DeMarco and Lister
+-"Process and technology are a second-order effect on the outcome of a project.  The first-order effect is the people." -Cockburn
+
+What to Do?
+
+-How do we manage the teams that are required to produce software?
+-Process hasn't created what it promised
+	-Smooth software development
+-People tend to want to control everything
+	1) Add more process
+	2) When that doesn't work (which it can't), go back to 1
+
+*** You want to be on a high functioning team!! Very important!! The process doesn't really matter, if you're on the right team.***
+
+"For every vision, there are so many re-visions"
+
+-If process were the answer, you'd think we would've figured it out by now. 
+	-If it were easy, it'd be done
+-Indeed, process can cause more problems than it solves
+	-Becomes cumbersome and slows progress
+
+Manifesto for Agile Software Development:
+
+-We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
+	-Individuals and interactions over processes and tools****
+	-Working software over comprehensive documentation
+	-Customer collaboration over contract negotiation
+	-Responding to change over following a plan
+
+Vaporware: In the computer industry, vaporware (or vapourware) is a product, typically computer hardware or software, that is announced to the general public but is never actually manufactured nor officially cancelled.
+
+ -Good process won't fix bad team members
+-Bad process will hinder good team members
+-Everyone must work together to succeed
+-Strong team members not necessarily strongest programmer, designer, etc. 
+-Communication and interaction make for strong team members.
+
+-Start small with tools and processes and only increase when truly needed
+-Don't create the environment first
+-Create the team and let them create environment
+
+"True terror is to wake up one morning and discover that your high school class is running the country." - Kurt Vonnegut
+
+Working Software over Comprehensive Documentation
+-Software without documentation is a disaster
+-Need to describe system and documnet design decisions
+-Large amounts of documentation can become cumbersome and out of sync 
+	-If too much documentation occurs, refactor and try again
+-Knowledge transferred in the team by direct interaction
+-**Produce no document, unless its need is immediate and significant!!
+
+
+
