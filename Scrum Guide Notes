@@ -1,0 +1,160 @@
+Notes for Scrum Guide
+By: Nicole Beck
+
+Purpose of the Scrum Guide:
+-Scrum's roles, events, artifacts, and thr rules that bind them together.
+
+Definition of Scrum:
+Scrum is a framework within which people can address complex adaptive problems, while productivity and creativity delivering products of the highest possible value.
+
+The Scrum framework consists of Scrum Teams and their associated roles, events, artifacts, and rules. 
+
+Uses of Scrum:
+Has been used--
+1. Research and identify viable markets, technologies, and product capabilities
+2. Develop products and enhancements
+3. Release products and enhancements, as frequently as many times per day
+4. Develop and sustain Cloud (online, secure, on-demand) and other operational environments for product use 
+5. Sustain and renew products
+
+Has been used to develop software, hardware, embedded software, networks of interacting function, autonomous vehicles, schools, government, marketing, managing the operation of organizations and almost everythign we use in our daily lives, as individuals and societies. 
+
+The essence of Scrum is a small team of people.  The individual team is highly flexible and adaptive.
+
+Scrum Theory:
+Founded on empiricism.  Empiricism asserts that knowledge comes from experience and making decisions based on what is known. 
+
+Three pillars of Scrum:
+1. Transparency
+2. Inspection
+3. Adaptation
+
+Transparency:
+Significant aspects of the process must be visible to those responsible for the outcome. 
+
+Inspection:
+Srum users must frequenctly inspect Scrum artifacts and progress toward a Spring Goal to detect undesirable variances. 
+Inspections are most beneficial when diligently perfromed by skilled inspectors.
+
+Adaptation:
+If an inspector determines that one or more aspects of a process deviate outside acceptable limits, the process or the material being processed must be adjusted. 
+Four events for inspection and adaptation:
+1.Sprint Planning
+2. Daily Scrum
+3. Sprint Review
+4. Spring Retrospective
+
+Scrum Values:
+Successful use of Scrum depends on people becoming more proficient in living the values of Commitment, Courage, Focus, Openness, and Respect. 
+
+The Scrum Team:
+The Scrum Team consists of the Product Owner, the Development Team, and the Scrum Master. 
+Scrum Teams are self-organizing and cross-function. 
+Scrum Teams deliver products iteratively and incrementally, maximizing opportunities for feedback. 
+
+Product Owner:
+Maximizing the value of the product resulting from work of the Development Team. Sole person responsible for managing the product backlog which includes...
+-Clearly expressing Product Backlog items
+-Ordering the items in the Product Backlog to best achieve goals and missions
+-Optimizing the value of the work the Development Team performs
+-Ensuring that the Product Backlog is visible, transparent, and clear to all, and shows what the Scrum Team will work on next
+-Ensuring the Development Team understands items in the Product Backlog to the level needed. 
+
+The Development Team:
+-Consists of professionals who do the work of delivering a potentially releasable increment of "Done" product at the end of each Sprint. 
+Development Teams are structured and empowered by the organization to organize and manage their own work. 
+-Self-Organizing-
+-Cross-Functional, with all the skills as a team necessary to create a product increment
+-no titles, regardless of the work being performed by the person
+-Recognizes no sub-teams in the Development Team, regardless of domains. 
+-Individual Development Team members may have specialized skills and areas of focus, but accountability belongs to the team as a whole
+
+The Scrum Master:
+Responsible for promoting and supporting the Scrum, helps everyone understand Scrum theory, practices, rules, and values. 
+Helps those outside the Scrum Team understand which of their interactions with the Scrum Team are helpful and which aren't. 
+
+Scrum Master Service to Product Owner:
+-Ensuring that goals, scope, and product doman are understood by everyone on the Scrum Team 
+-Finding techniques for effective Product Backlog management
+-Helping the Scrum Team understand the need for clear and conscise Product Backlog items
+-Understanding the empirical environment
+-Ensuring the Product Owner knows how to arrange the Product Backlog to maximize value
+-Understanding and practicing agility
+-Facilitating Scrum events as request or needed. 
+
+Scrum Master Service to Development Team:
+-Couching the Development Team in self-organiztion and cross functionality
+-Helping the Development Team to create high-value products
+-Removing the immpediments to the Develpment Team's progress
+-Facilitating Scrum events as requested or needed
+-Coaching the Development Team in organizational environments in which Scrum is not yet fully adopted and understood
+
+Scrum Master Service to the Organization
+-Leading and coaching the organization in its Scrum adoption
+-Planning Scrum implementations within the organization
+-Helping employees and stakeholders understand and enact Scrum and empirical product development
+-Causing change that increases the productivity of the Scrum Team 
+-Working with other Scrum Masters to increase the effectiveness of the application of Scrum in the organization
+
+Scrum Events:
+The Sprint: Two weeks, where a potentially releasable products is "released. 
+During the Spring, no changes are made that change the goals, goals do not decrease, can be clarified or re-negotiated. 
+
+The Product Owner can cancel the sprint. 
+
+Sprint Planning:
+Time-Boxed to a maximum of eight hours, or shorter. Sprint Planning answers the following: "What can be delivered in the increment resulting from the upcoming Sprint?" "How will the work needed to deliver the increment be achieved?"
+
+Topics:	"What can be done in this Sprint?"
+	"How will the choses work get done?"
+	
+Sprint Goal:
+The Sprint Goal is the objective set for the Sprint that can be met through the implementation of the Product Backlog. Gives the development teams some flexibility regarding the functionality implemented within the Sprint. 
+
+Daily Scrum:
+"What did I do yesterday that helped the Development Team meet the Sprint Goal?"
+"What will I do today to help the Development Team meet the Sprint Goal?"
+"Do I see any impediment that prevents me or the Development Team from meeting the Sprint Goal?"
+
+Daily Scrums improve communications, eliminate other meetings, identify impediments to development for removal, highlight and promote quick decision-making, and imporve the Development Team's level of knowledge. This is a key inspect and adapt meeting. 
+
+Sprint Review:
+Informal meeting, not a status meeting, and the presnetation of the increment is inteded to elicit feedback and foster collaboration. 
+
+-Product Owner explains the product backlog items
+-Development Teams discuss what went well and poorly
+-Demonstation
+-Review of timeline, budget, capabilites, and marketplace. 
+
+Sprint Retrospective:
+Opportunity for the Scrum Team to inspect itself and create a plan for improvements to be enacted during the next Sprint. 
+The Scrum Master ensures that the meeting is positive and productive. 
+-Inspect how the last Sprint went in regards to people, relationships, process, and tools.
+-Identify and order the major items that went well and potential improvements
+-Create a plan for implementing improvments to the way the Scrum Team does its work
+
+Scrum Artifacts:
+represent work or value to provide transparency and opportunites for inspection and adaptation. 
+
+Product Backlog:
+-An ordered list of everything that is known to be needed in the product, it is never complete. Product Backlog shoudl become bigger and bigger. Higher Ordered product backlog items are usually clearer and more detailed than lower ordered ones. 
+
+At any point in time, the total work remaining to reach a goal can be summed. The product owner tracks this total work remaining at least every sprint review. 
+
+Sprint Backlog:
+A plan for delivering the product Increment and realizing the Sprint Goal, makes visible all the work that the development team identifies as necessary to meet the Sprint Goal. 
+
+Increment:
+The increment is the sum of all the Product Backlog Items completed during the Sprint and the value of the increments of all previous Sprints. 
+
+Artifact Transparency:
+Decisions to optimize value and control risk are made and based on the perceived state of the artifacts. 
+
+The Scrum Master's job is to work with the Scrum Team and the organization to increase the transparency of the artifacts. This work usually involves learning, convinving, and change. 
+
+Definition of Done:
+When the product backlog item or an increment is described as Done, everyone must understand what done means. The Development Teams deliver an increment of product functionality at the end of each sprint. 
+
+
+
+
