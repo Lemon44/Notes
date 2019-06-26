@@ -55,4 +55,3 @@ Boeing 787 "Sparky":
 According to the FAA, there's a software bug in the 787 Dreamliner that can cause its electrical system to fail and, as a result, lead to "loss of control" of the plane.
 After 248 days, the plane would fall out of the sky. (2^31 100ths of a second)
 Even in 2015, our airplanes have integer overflow bugs. 
-
