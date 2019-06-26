@@ -92,6 +92,21 @@ Design Patterns 08:
 
 *Creating a template for abstract classes, whenever you see an abstract class you know you're using a template 
 
+Hot Beverage EXAMPLE:
+-For both coffee and tea 
+    -Boil water (same, in base class) 
+    -Use hot water to extract (different, abstract in base class) 
+    -Pour into cup (same) 
+    -Add condiments (different) 
+-prepareRecipe is template method 
+
+all steps are present, some are handled by base class, some by subclass 
+
+Hooks: 
+    -Can define concrete methods that do nothing unless subclass overrides them
+    -Use abstract when subclass must implement hooks when optional
+
+
 
 
 
