@@ -1,37 +1,69 @@
 NOTES FOR HEAD FIRST DESIGN PATTERNS 
 by: Nicole Beck
+NOTES FOR HEAD FIRST DESIGN PATTERNS 
+by: Nicole Beck
 
 . Head First Design Patterns
 
 I. Design Patterns
-    - Strategy 
-        + Encapsulates interchangeable algorithms/behaviours and uses delegation to decide which one to use 
-        + Allows the algorithm to vary independently from the clients that use it.
-        + Behavioral Software design pattern 
-        + Enables selecting an Algorithm at runtime.
-        + Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.
-    - Observer
-        + Defines a one-to-many dependency between objects so that when one object changes state, 
-        + All of its dependents are updated and notified automatically
-        + An object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes usually by calling one of their methods.
-        + The observer pattern is also a key part in the familiar model-view-controller (MVC) 
-    - Decorator
-        + Designs should be open for extension, but closed for modification
-        + You want people to be able to use our stuff but without being able to edit our stuff
-        + Decorators:
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Strategy: [CHAPTER 1]
+
+	-Encapsulates interchangeable algorithms/behaviours and uses delegation to decide which one to use 
+	-Allows the algorithm to vary independently from the clients that use it.
+	-Behavioral Software design pattern 
+	-Enables selecting an Algorithm at runtime.
+	-Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Observer:  [CHAPTER 2]
+
+	-Defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are updated and notified automatically
+	-An object, called the subject, maintains a list of its dependents, called observers, and notifies them 	automatically of any state changes usually by calling one of their methods.
+	-The observer pattern is also a key part in the familiar model-view-controller (MVC) 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Decorator: [CHAPTER 3]
+	
+	-Designs should be open for extension, but closed for modification
+	-You want people to be able to use our stuff but without being able to edit our stuff
+
+	Decorators:
             * Have the same super type of the objects they decorate
             * Can have one or more Decorators 
-            * Can pass wrapped objects anywhere original could be passed
+            * Can pass wrapped objects anywhere the original could be passed
             * Adds behavior before and/or after delegating object
-        + Decorator Pattern 
+	
+	Decorator Pattern:
             * Attaches additional responsibilies to an object dynamically 
             * Provide a flexible alternative to sub-classing for extending functionality 
-        + Wraps another object dynamically and provides additional behaviour for it.
-        + Provides a flexible alternative to subclassing for extending functionality.
-        + Doesn't alter the interface but adds responsibility
-        + Purpose:
+
+        -Wraps another object dynamically and provides additional behaviour for it.
+        -Provides a flexible alternative to subclassing for extending functionality.
+        -Doesn't alter the interface but adds responsibility
+
+-Decorators have the same supertype as the objects they decorate. 
+
+-You can use one or more decorators to wrap an object. 
+
+-Given that the decorator has the same supertype as the object it decorates, we can pass around a decorated object in place of the original (wrapped) object. 
+
+-The decorator adds its own behavior either before and/or after delegating to the object it decorates to do the rest of the job. 
+
+-Objects can be decorated at any time, so we can decorate objects dynamically at runtime with as many decorators as we like.
+
+1. Take a DarkRoast object
+2. Decorate it with a Mocha object
+3. Decorate it with a Whip object
+4. Call the cost() method and rely on delegation to add on the condiment costs
+	
+	Purpose:
             * Attaching additional properties to objects.
-    - Factory method
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Factory Pattern: [CHAPTER 4]
+
         + Defines an interface for creating an object, but lets subclasses decide which class to instantiate
         + Lets a class defer instantiation to subclasses
         + Handles the details of object creation 
@@ -45,52 +77,79 @@ I. Design Patterns
         + Factories dont have to be abstract 
             * Can have default and that can call down if necessary 
         + The factory method pattern uses inheritance and relies on a subclass to handle the desired object instantiation 
-    - Abstract Factory 
-        + Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
-        + Abstract factory design pattern is one of the creatonal patterns, very similar to Factory Pattern.
-        + Considered as another layer of abstraction over factory pattern.
-        + Work around super-factory which creates other factories.
-        + Provides us a framework that allows us to create objects that follow a general pattern.
-            * So at runtime, abstract factory is coupled with any desired concrete factory which can create objects of desired type.
-            * ConcreteFactory:
-                > Implements the operations declared in the abstractFactory to create concrete product objects 
-        + Main Difference between "Factory method" and "Abstract Factory" is that factory method is a single method and abstractory factory is an object.
-        + The Factory method is just a method, it can be overrideen in a subclass, whereas the abstract factory is an object that has multiple factory methods on it         
-    - Singleton
-        + Ensures a class has only one instance, and provides a global point of access to it. 
-    - Command
-        + Encapsulates a request as an object, thereby letting you parameterise other objects with different requests,
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Abstract Factory: [CHAPTER 4]
+
+	-Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+	-Abstract factory design pattern is one of the creatonal patterns, very similar to Factory Pattern. 
+	-Considered as another layer of abstraction over factory pattern.
+	-Work around super-factory which creates other factories.
+	-Provides us a framework that allows us to create objects that follow a general pattern.
+	-So at runtime, abstract factory is coupled with any desired concrete factory which can create objects of desired type.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ConcreteFactory: [CHAPTER 4]
+
+	-Implements the operations declared in the abstractFactory to create concrete product objects 
+	-Main Difference between "Factory method" and "Abstract Factory" is that factory method is a single method and abstractory factory is an object.
+	-The Factory method is just a method, it can be overrideen in a subclass, whereas the abstract factory is an object that has multiple factory methods on it      
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Singleton Pattern: [CHAPTER 5]
+
+
+	**We're taking a class and letting it manage a single instance of itself.  We're also preventing any other class from creating a new instance on its own.  To get an instance, you've got to go through the class itself. 
+	**We're also providing a global access point to the instance: whenever you need an instance, just query the calss and it will hand you back the single instance.  As you've seen, we can implement this so that the Singleton is created in a lazy manner, which is especially important for resource intensive objects. 
+
+	-Ensures a class has only one instance, and provides a global point of access to it. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Command Pattern: [CHAPTER 6]
+
+    	-Encapsulates a request as an object, thereby letting you parameterise other objects with different requests,
         queue or log requests, and support undoable operations.
-        + Decouples an obect making a request from the one that knows how to perform it.
-        + A behavioral design pattern in which an object is used to encapsulate all information need.
-        + Client is responsible for creating a concrete command and setting its receiver
-        + Invoker holds a command object and at some point calls it execute() method 
-        + Command delcares an interface that has a least an execute() method 
-        + A concrete command impletements execute() and may call multiple methods in its receiver
-        + Do something for me, now or later, I dont care, just do it
-    - Adapter
-        + Wraps an object and provides a different interface to it.
-        + Converts the interface of a class into another interface the clients expect.
-        + Lets classes work together that couldn't otherwise because of incompatible interfaces.
-        + Purpose:
+
+	-Decouples an obect making a request from the one that knows how to perform it.
+	-A behavioral design pattern in which an object is used to encapsulate all information need.
+	-Client is responsible for creating a concrete command and setting its receiver
+	-Invoker holds a command object and at some point calls it execute() method 
+	-Command delcares an interface that has a least an execute() method 
+	-A concrete command impletements execute() and may call multiple methods in its receiver
+	-Do something for me, now or later, I dont care, just do it
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ Adapter Pattern: [CHAPTER 7]
+
+	-Wraps an object and provides a different interface to it.
+	-Converts the interface of a class into another interface the clients expect.
+	-Lets classes work together that couldn't otherwise because of incompatible interfaces.
+	
+Purpose:
             * Adapting a protocol of one class to the protocol of another class.
-    - Facade
-        + Wraps a bunch of objects to simply their interface
-        + Provides a unified interface to a set of interfaces in a subsystem.
-        + Defines a higher-level interface that makes the subsystem easier to use.
-        + Provides a unified interface to a set of interfaces in a subsystme.
-        + Facade defines a higher=level interface that makes the subsystem easier to use 
-    - Adapter/Facade 
-        + The Adapter
-            + Converts the interface of a class into another interface the clients expect 
-            + Adapter let classes work together that couldn't otherwise because of incompatible interfaces 
-            + Adapts to calls from different interfaces 
-            + Two Types:
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+Facade Pattern: [CHAPTER 7]
+
+	-Wraps a bunch of objects to simply their interface
+	-Provides a unified interface to a set of interfaces in a subsystem.
+	-Defines a higher-level interface that makes the subsystem easier to use.
+	-Provides a unified interface to a set of interfaces in a subsystme
+	-Facade defines a higher=level interface that makes the subsystem easier to use 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+Adapter/Facade 
+	-The Adapter
+		-Converts the interface of a class into another interface the clients expect 
+            		-Adapter let classes work together that couldn't otherwise because of incompatible interfaces 
+            		-Adapts to calls from different interfaces 
+	-Two Types:
                 * Object adpaters use compositions
                 * Class adpaters use inheritence 
-            + Differences
+            	-Differences
                 * Adapter alters and interface to make it usable
-    - Principle of least knowledge
+    
+**Principle of least knowledge
         + Talk to only immediate friends
         + Decouples
         + Law of demeter 
@@ -99,13 +158,17 @@ I. Design Patterns
             * Objects passed as parameters 
             * Objects they instantiate 
             * Instance variables 
-    - Template Method 
-        + Encapsulates algorithms
-        + Defines the skeleton (/steps) of an algorithim in a mehtod, deferring some steps to subclasses
-        + Subclasses decide how to implement steps in an algorithm (without changing the algorithm's structure)
-        + Behavioral design pattern that defines the program skeleton of an algorithm in an operation, deferring some steps to subclasses 
-        + it lets one redfine certain steps of an algorithm without changing the algorithm's structure.
-        + Hot Beverage
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+Template Method Pattern: [CHAPTER 8]
+
+	-Encapsulates algorithms
+        	-Defines the skeleton (/steps) of an algorithim in a mehtod, deferring some steps to subclasses
+        	-Subclasses decide how to implement steps in an algorithm (without changing the algorithm's structure)
+        	-Behavioral design pattern that defines the program skeleton of an algorithm in an operation, deferring some steps to subclasses 
+        	-it lets one redfine certain steps of an algorithm without changing the algorithm's structure.
+        
+Hot Beverage
             * For both coffe and tea (same, in base class)
                 > Boil water
                 > Use hot wwater to extract (different, abstract in base class)
@@ -116,28 +179,35 @@ I. Design Patterns
                 > All steps present
                 > Some are handled by bse class
                 > Some by subclasses
-        + Hooks
+	
+**Hooks
             * Can define concrete methods that do nothing unless subclass overrides them
             * Use abstract when subclass must implement, hooks when optional 
-        + Hollywood Principle
+        
+**Hollywood Principle
             * Dont call us, we'll call you
             * Low-level hooks into system, high-level calls at the appropriate time 
             * Java Array.sort calls compareTo() 
-        + Summary
+        
+**Summary
             * To prevent subclasses from changing the algorithm, make the template method final 
             * Both the strategy and template paterns encapsulate algorithms
                 > Strategy via composition 
                 > Template via inheritance 
             * Factory is a very specialized template 
                 > Returns result from subclass 
-    - Iterator
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Iterator Pattern: [CHAPTER 9]
         + Provides a way to traverse/access the elements of an aggregate object sequentially without exposing its internal structure.
         + Takes the job iterating over an aggregate and encapsulates it in another object.
-    - Composite
-        + Provides a structure to hold both individual objects and composite objects.
-        + Lets clients treat individual objects and collections/compositions of objects uniformly.
-        + Purpose:
-            * Single and multiple, recursively composed objects can be accessed by the same protocol 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+Composite Pattern: [CHAPTER 9]
+	-Provides a structure to hold both individual objects and composite objects.
+        	-Lets clients treat individual objects and collections/compositions of objects uniformly.
+**Purpose:
+            -Single and multiple, recursively composed objects can be accessed by the same protocol 
+
     - Principle of least knowledge
         + Talk to only immediate friends
         + Decouples
@@ -145,28 +215,32 @@ I. Design Patterns
             * or principle of least knowledge is a design guideline for developing software.
             * Each unit should have only limited knowledge about other units: only units "closely" related to the current unit.
             * Each unit should only talk to its friends; dont talk to strangers
-        + Methods may talk to... 
+         Methods may talk to... 
             * Their own object 
             * Objects passed as parameters 
             * Objects they instantiate 
             * Instance variables 
-   - Dependency Injection
-        + A Technique whereby one object ( or static method) supplies the dependencies of another object 
-        + A dependency is an object that can be used (a service)
-        + An injection is the passing of a dpendency to a dependent object (a client) that would use it 
-        + The service is made part of the client's state 
-        + Passing the service to the client, rather than allowing a client to build or find the service, 
+
+**Dependency Injection
+        	-A Technique whereby one object ( or static method) supplies the dependencies of another object 
+        	-A dependency is an object that can be used (a service)
+        	-An injection is the passing of a dpendency to a dependent object (a client) that would use it 
+        	-The service is made part of the client's state 
+        	-Passing the service to the client, rather than allowing a client to build or find the service, 
             its the fundamental requirement to the partern
-        + The fundamental requirement means that using values (services) produced within the class from new or static methods is prohibited
-        + The client should accept values passed in from outside 
-        + This allows the client to make acquiring dependencies someone else's problem 
-        + The intent behind dependency injection is to decouple objects to the extent that no client code has to be changed
-    -Inversion of Control 
-        + A design principle in which custom-written protions of a computer program receive the flow of control from a generic framework 
-        + A software architecture with this design inverts control as compared to traditional procedural programming
+        	-The fundamental requirement means that using values (services) produced within the class from new or static methods is prohibited
+        	-The client should accept values passed in from outside 
+        	-This allows the client to make acquiring dependencies someone else's problem 
+        	-The intent behind dependency injection is to decouple objects to the extent that no client code has to be changed
+
+-Inversion of Control 
+        -A design principle in which custom-written protions of a computer program receive the flow of control from a generic framework 
+        -A software architecture with this design inverts control as compared to traditional procedural programming
             * In traditional programming, the custom code that expresses the purpose of the program calls into reusable libraries to take care of generic tasks
             * With inversion of control, it is the framework that calls into the custom, or task-specific code.
-    - Abstract Factory Pattern
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+ 
+Abstract Factory Pattern
         + Provides an interface for creating families of related or dependent objects without specifying the 
         + Factory:
             * Creation through inheritance 
