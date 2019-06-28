@@ -1,0 +1,47 @@
+    SCENE ONE: FIELD
+
+    The character is out in a field routinely picking flowers for a medicinal cure and for soup for dinner tonight.  
+    They find a ninroot, a bushelsnap, and a blue mountain flower.
+
+        **Add to inventory**
+
+    They have a thought!
+        [Their grandmother once spoke of this rare flower that grew in the deep Valley of Seduk. 
+         I actually think she wrote about it in a journal they still have at home.]
+
+Prompt user to go home, or continue picking flowers. This will prompt another thought after a bit, 
+to persistently think of that rare flower.  
+
+    SCENE TWO: HOME 
+
+    The character is home looking around a small mountain cottage. It's warm and welcoming, scattered with flowers, 
+    and books, a single crossbow rest next to the fireplace. 
+
+Prompt user to look for grandmother's journal. 
+
+The user can't find the journal. 
+
+    They have a thought! 
+        [Their grandmother used to spend a considerable amount of time in the hut out back. 
+         She never knew why an old woman would be so entertained by a secluded shack full of dust, tools, 
+         glass vials.  But she was only a kid, she maybe doesn't remember everything.]
+
+Prompt user to look in shack 
+
+    SCENE THREE: SHACK
+
+    She walks into the shack.  Nobody has been back here since her grandmother passed.
+    Dust covers all areas, she can hardly see as the dust particles glittering in the air make her cough. 
+
+The user sees tools, pickaxe, hammer, dagger, shovel. 
+
+    **Can add to inventory, if wanted**
+
+The user still can't find journal, but did find a key
+
+    **Add key to inventory**
+
+
+
+
+
