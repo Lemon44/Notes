@@ -10,7 +10,7 @@ If you always want the collections to be serialized in the block style, set the 
 -- print yaml.dump(yaml.load(document), default_flow_style = False)
 
 Importing Yaml:
-    -It is not safe to clal yaml.load with any data received from an untrusted source! 
+    -It is not safe to call yaml.load with any data received from an untrusted source! 
 
 yaml.load() converts a Yaml document to a Python object. 
     -it returns a python object
@@ -38,7 +38,7 @@ You can construct the instance of a python class by using the ! !python/object t
 Hero(name='Welthyr Syxgon', hp=1200, sp=0)
 
 You can make a python object safe and thus recognized by yaml.safe_load.
--You first have to derive it from yaml.YAMLObject and explicitely set its class
+-You first have to derive it from yaml.YAMLObject and explicitly set its class
 property yaml_loader to yaml.SafeLoader. 
 
 Dumping Yaml:
@@ -62,3 +62,48 @@ Dumping instances of a python class:
 >>> print yaml.dump(Hero("Galain Ysseleg", hp=-3, sp=2))
 
 !!python/object:__main__.Hero {hp: -3, name: Galain Ysseleg, sp: 2}
+
+Constructors, representer, resolvers:
+
+    You may define your own application-specific tags.  The easiest way to do it is to define a subclass of yaml.YAMLObject:
+    
+    >>> class Monster(yaml.YAMLObject):
+...     yaml_tag = u'!Monster'
+...     def __init__(self, name, hp, ac, attacks):
+...         self.name = name
+...         self.hp = hp
+...         self.ac = ac
+...         self.attacks = attacks
+...     def __repr__(self):
+...         return "%s(name=%r, hp=%r, ac=%r, attacks=%r)" % (
+...             self.__class__.__name__, self.name, self.hp, self.ac, self.attacks)
+
+TAGS:
+
+YAML tag	            Python type
+Standard YAML tags	
+!!null	                None
+!!bool	                bool
+!!int	                int or long (int in Python 3)
+!!float	                float
+!!binary	            str (bytes in Python 3)
+!!timestamp	            datetime.datetime
+!!omap, !!pairs	        list of pairs
+!!set	                set
+!!str	                str or unicode (str in Python 3)
+!!seq	                list
+!!map	                dict
+Python-specific         tags	
+!!python/none	        None
+!!python/bool	        bool
+!!python/bytes	        (bytes in Python 3)
+!!python/str	        str (str in Python 3)
+!!python/unicode	    unicode (str in Python 3)
+!!python/int	        int
+!!python/long	        long (int in Python 3)
+!!python/float	        float
+!!python/complex	    complex
+!!python/list	        list
+!!python/tuple	        tuple
+!!python/dict	        dict
+
