@@ -1,9 +1,12 @@
-    SCENE ONE: FIELD
+    SCENE ONE: FIELD **FIRST LOCATION**
 
-    The character is out in a field routinely picking flowers for a medicinal cure and for soup for dinner tonight.  
+**POssible user back story, one paragraph or less automatically appears.**
+
+Room Description:
+    The character is out in a field routinely picking flowers for a medicinal cure and for dinner tonight.  
     They find a ninroot, a bushelsnap, and a blue mountain flower.
 
-        **Add to inventory**
+    **Three ingredients added to inventory**
 
     They have a thought!
         [Their grandmother once spoke of this rare flower that grew in the deep Valley of Seduk. 
@@ -12,14 +15,16 @@
 Prompt user to go home, or continue picking flowers. This will prompt another thought after a bit, 
 to persistently think of that rare flower.  
 
-    SCENE TWO: HOME 
+----------------------
+    SCENE TWO: HOME **SECOND LOCATION**
 
+Room Description:
     The character is home looking around a small mountain cottage. It's warm and welcoming, scattered with flowers, 
-    and books, a single crossbow rest next to the fireplace. 
+    and books, a pot of soup roasts over a fire, and a single crossbow rest next to the fireplace.
+
+    There is a small sink, a one room bedroom, and a living room with a single rocking chair next to the kitchen table. 
 
 Prompt user to look for grandmother's journal. 
-
-The user can't find the journal. 
 
     They have a thought! 
         [Their grandmother used to spend a considerable amount of time in the hut out back. 
@@ -28,20 +33,26 @@ The user can't find the journal.
 
 Prompt user to look in shack 
 
-    SCENE THREE: SHACK
+Items: pot of soup: action: [eat] soup, [take] soup. 
+       crossbow: action: [take] crossbow, [equip] crossbow. 
+       bed: action: [sleep] in bed. 
 
+--------------------
+    SCENE THREE: SHACK **THIRD LOCATION**
+
+Room Description:
     She walks into the shack.  Nobody has been back here since her grandmother passed.
     Dust covers all areas, she can hardly see as the dust particles glittering in the air make her cough. 
 
-The user sees tools, pickaxe, hammer, dagger, shovel. 
-
-    **Can add to inventory, if wanted**
+The user sees tools, a pickaxe, a hammer, a dagger, shovel. 
 
 The user still can't find journal, but did find a key
 
-    **Add key to inventory**
+Once key is equipped, the user find a hollow part of the floor. 
 
-
-
+Items: pickaxe: action: [take] pickaxe. 
+       hammer: action: [take] hammer, [use] hammer.
+       dagger: action: [take] dagger, [equip] dagger.
+       key: action: [take] key, [use] key.
 
 
