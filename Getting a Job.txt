@@ -79,13 +79,24 @@ Resumes
 -Your resume will first be filtered by an HR program: be buzzword compliant
 -You have ~5 seconds to catch someone's attention
     -Important stuff first
-Don't 
+Don't!
     -Put your address: You're willing to commute or WFH
     -Use your school email address 
     -Have a cute email address or funny/gamer GitHub login
     -List your required courses, but DO list your electives
     -List your IDE's
     -Mention desktop applications
-    -Put in objectives: your objective is to get a job, objectives and targeted info can go in a cover letter
+    -Put in objectives: your objective is to get a job: Objectives and targeted info can go in a cover letter
+
+Do!
+    -Put in your GitHub and LinkedIn URL's
+    -List your languages, either in order (or with level) of experience
+        -beginner, intermediate, advanced
+    -List your substantial school work
+    -List Scrum, GitHub, Design Patterns, TDD, Travis (CI/CD), Sonar Cloud
+    -Mention Linux
+    -Say what you role was and what you actually accomplished 
+        -Not what you were "responsible for": NObody cares, you probably didn't do it 
+    -
     
 
