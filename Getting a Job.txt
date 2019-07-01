@@ -63,8 +63,10 @@ Market Yourself!
     -Include: a non-school email address, your twitter, linked-in, GitHub URLs
 -GitHub 
     -Your school work
-    -Gists
+    -Gists (find out something cool about python)
 -Blog
+-Create and give a presentation or two
+-Write a paper or two
 
 **If the place is too fun, that means the job itself is crummy**
 
@@ -73,4 +75,17 @@ Red Flags:
 -"We are a family"
 -Promise of the future (sort of difficult to trust), stock options, etc. 
 
+Resumes
+-Your resume will first be filtered by an HR program: be buzzword compliant
+-You have ~5 seconds to catch someone's attention
+    -Important stuff first
+Don't 
+    -Put your address: You're willing to commute or WFH
+    -Use your school email address 
+    -Have a cute email address or funny/gamer GitHub login
+    -List your required courses, but DO list your electives
+    -List your IDE's
+    -Mention desktop applications
+    -Put in objectives: your objective is to get a job, objectives and targeted info can go in a cover letter
+    
 
