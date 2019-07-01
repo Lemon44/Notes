@@ -45,3 +45,24 @@ Start!
 -Being nice
 -Branching out
     -New languages, etc. 
+
+Why is Anyone Hired?
+    -Because someone is willing to pay to have a solution to their problem
+    -Be the solution
+    -"Are you the solution to the problem?" (Convince them that you have a set of skills that provide the solution)
+
+Do the job before you get the job!
+-Do research on the company and the position
+-What tech do they use?
+-Whom have they bought and been bought by?
+-Their strengths and weakness and those of their competitors
+-ethics, morals. 
+
+Market Yourself!
+-Print up some cards 
+    -Include: a non-school email address, your twitter, linked-in, GitHub URLs
+-GitHub 
+    -Your school work
+    -Gists
+-Blog
+
