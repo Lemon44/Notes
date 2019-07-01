@@ -87,6 +87,7 @@ Don't!
     -List your IDE's
     -Mention desktop applications
     -Put in objectives: your objective is to get a job: Objectives and targeted info can go in a cover letter
+    -Never say "references available by request"
 
 Do!
     -Put in your GitHub and LinkedIn URL's
@@ -97,6 +98,20 @@ Do!
     -Mention Linux
     -Say what you role was and what you actually accomplished 
         -Not what you were "responsible for": NObody cares, you probably didn't do it 
-    -
+    -Keep it to one page 
+    -Be very careful with spelling, grammar, and formatting 
+        -Don't change fonts, justification, etc. 
+    
+Interviewing: Many Kinds
+
+-Typically start with phone screen
+-Possibly followed by an online quiz
+-May be half- or full day 
+-May be interviewed by group 
+    -Or individuals
+    -Or mix
+-Typically have to eat with them
+    -Learn some table manners 
+
     
 
