@@ -15,7 +15,7 @@ Room Description:
 Prompt user to go home, or continue picking flowers. This will prompt another thought after a bit, 
 to persistently think of that rare flower.  
 
-----------------------
+----------------------------------------------------------------------------------------------------------------------
     SCENE TWO: HOME **SECOND LOCATION**
 
 Room Description:
@@ -37,7 +37,7 @@ Items: pot of soup: action: [eat] soup, [take] soup.
        crossbow: action: [take] crossbow, [equip] crossbow. 
        bed: action: [sleep] in bed. 
 
---------------------
+---------------------------------------------------------------------------------------------------------------------
     SCENE THREE: SHACK **THIRD LOCATION**
 
 Room Description:

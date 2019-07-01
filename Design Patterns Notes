@@ -434,3 +434,18 @@ Hollywood Principle
         -Template via inheritance
     Factory is a very specialized template  
         -Returns result from subclass
+
+Iterator Pattern: [CHAPTER 9]
+-Provides a way to access the elements of an aggregate object sequentially without exposing the underlying representation
+-This places the task of traversal on the iterator object, not on the aggregate, which simplifies... **missed it***
+-The Iterator and the Aggregate are coupled, when the aggregate changes, the iterator does not (from a client point of view)
+
+**Java: Enumeration is the older that has been replaced by Iterator-- iterator allows removal
+
+Design Principle: 
+-A class should have only one reason to change  
+    -single-responsibility principle
+-Low coupling and high cohesion
+    -all methods related to purpose
+
+    

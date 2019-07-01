@@ -17,7 +17,7 @@ Has been used--
 4. Develop and sustain Cloud (online, secure, on-demand) and other operational environments for product use 
 5. Sustain and renew products
 
-Has been used to develop software, hardware, embedded software, networks of interacting function, autonomous vehicles, schools, government, marketing, managing the operation of organizations and almost everythign we use in our daily lives, as individuals and societies. 
+Has been used to develop software, hardware, embedded software, networks of interacting function, autonomous vehicles, schools, government, marketing, managing the operation of organizations and almost everything we use in our daily lives, as individuals and societies. 
 
 The essence of Scrum is a small team of people.  The individual team is highly flexible and adaptive.
 
@@ -33,8 +33,8 @@ Transparency:
 Significant aspects of the process must be visible to those responsible for the outcome. 
 
 Inspection:
-Srum users must frequenctly inspect Scrum artifacts and progress toward a Spring Goal to detect undesirable variances. 
-Inspections are most beneficial when diligently perfromed by skilled inspectors.
+Scrum users must frequently inspect Scrum artifacts and progress toward a Spring Goal to detect undesirable variances. 
+Inspections are most beneficial when diligently performed by skilled inspectors.
 
 Adaptation:
 If an inspector determines that one or more aspects of a process deviate outside acceptable limits, the process or the material being processed must be adjusted. 
@@ -74,18 +74,18 @@ Responsible for promoting and supporting the Scrum, helps everyone understand Sc
 Helps those outside the Scrum Team understand which of their interactions with the Scrum Team are helpful and which aren't. 
 
 Scrum Master Service to Product Owner:
--Ensuring that goals, scope, and product doman are understood by everyone on the Scrum Team 
+-Ensuring that goals, scope, and product domain are understood by everyone on the Scrum Team 
 -Finding techniques for effective Product Backlog management
--Helping the Scrum Team understand the need for clear and conscise Product Backlog items
+-Helping the Scrum Team understand the need for clear and concise Product Backlog items
 -Understanding the empirical environment
 -Ensuring the Product Owner knows how to arrange the Product Backlog to maximize value
 -Understanding and practicing agility
 -Facilitating Scrum events as request or needed. 
 
 Scrum Master Service to Development Team:
--Couching the Development Team in self-organiztion and cross functionality
+-Couching the Development Team in self-organization and cross functionality
 -Helping the Development Team to create high-value products
--Removing the immpediments to the Develpment Team's progress
+-Removing the impediments to the Development Team's progress
 -Facilitating Scrum events as requested or needed
 -Coaching the Development Team in organizational environments in which Scrum is not yet fully adopted and understood
 
@@ -119,12 +119,12 @@ Daily Scrum:
 Daily Scrums improve communications, eliminate other meetings, identify impediments to development for removal, highlight and promote quick decision-making, and imporve the Development Team's level of knowledge. This is a key inspect and adapt meeting. 
 
 Sprint Review:
-Informal meeting, not a status meeting, and the presnetation of the increment is inteded to elicit feedback and foster collaboration. 
+Informal meeting, not a status meeting, and the presentation of the increment is intended to elicit feedback and foster collaboration. 
 
 -Product Owner explains the product backlog items
 -Development Teams discuss what went well and poorly
--Demonstation
--Review of timeline, budget, capabilites, and marketplace. 
+-Demonstration
+-Review of timeline, budget, capabilities, and marketplace. 
 
 Sprint Retrospective:
 Opportunity for the Scrum Team to inspect itself and create a plan for improvements to be enacted during the next Sprint. 
