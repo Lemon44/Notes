@@ -1,48 +1,58 @@
-    SCENE ONE: FIELD **FIRST LOCATION**
+SCENE ONE: Field 
 
-**POssible user back story, one paragraph or less automatically appears.**
+SCENE DESCRIPTION:
 
-Room Description:
-    The character is out in a field routinely picking flowers for a medicinal cure and for dinner tonight.  
-    They find a ninroot, a bushelsnap, and a blue mountain flower.
+                    You are in a field picking wildflowers and herbs for a medicinal cure. 
+                    You have been getting piercing headaches, 
+                    and heard that there was an easy at-home remedy that you thought you might try.   
+                    You find a ninroot, a bushelsnap, and a blue mountain flower.
 
-    **Three ingredients added to inventory**
+THOUGHTS:
+                    [Your grandmother once spoke of this rare flower that grew in the deep Valley of Seduk. 
+                    I actually think she wrote about it in a journal you still have at home.]
 
-    They have a thought!
-        [Their grandmother once spoke of this rare flower that grew in the deep Valley of Seduk. 
-         I actually think she wrote about it in a journal they still have at home.]
+USER PROMPT:        "Would you like to go home or continue picking flowers?"
+    
+    **If user chooses to continue picking flowers, 
+      he/she gets another piercing headache, 
+      health declines until they're forced to go home.**
 
-Prompt user to go home, or continue picking flowers. This will prompt another thought after a bit, 
-to persistently think of that rare flower.  
+ITEMS:              Ninroot:                             action: [take], [eat], [drop]
+                    Bushelsnap:                          action: [take], [eat], [drop]
+                    Blue Mountain Flower:                action: [take], [eat], [drop]
+
 
 ----------------------------------------------------------------------------------------------------------------------
-    SCENE TWO: HOME **SECOND LOCATION**
+SCENE TWO: HOME
 
-Room Description:
-    The character is home looking around a small mountain cottage. It's warm and welcoming, scattered with flowers, 
-    and books, a pot of soup roasts over a fire, and a single crossbow rest next to the fireplace.
+SCENE DESCRIPTION:
+                    You are in home looking around a small mountain cottage. 
+                    It's warm and welcoming, scattered with flowers, 
+                    and books, a pot of soup roasts over a fire, and a 
+                    single crossbow rest next to the fireplace.
 
-    There is a small sink, a one room bedroom, and a living room with a single rocking chair next to the kitchen table. 
+                    There is a small sink, a one room bedroom, 
+                    and a living room with a single rocking chair next to the kitchen table. 
 
-Prompt user to look for grandmother's journal. 
+USER PROMPT:         
 
-    They have a thought! 
-        [Their grandmother used to spend a considerable amount of time in the hut out back. 
-         She never knew why an old woman would be so entertained by a secluded shack full of dust, tools, 
-         glass vials.  But she was only a kid, she maybe doesn't remember everything.]
+THOUGHTS: 
+                    [Their grandmother used to spend a considerable amount of time in the hut out back. 
+                    She never knew why an old woman would be so entertained by a secluded shack full of dust, tools, 
+                    glass vials.  But she was only a kid, she maybe doesn't remember everything.]
 
-Prompt user to look in shack 
+USER PROMPT:        "Would you like to go investigate the hut?"
 
-Items: pot of soup: action: [eat] soup, [take] soup. 
-       crossbow: action: [take] crossbow, [equip] crossbow. 
-       bed: action: [sleep] in bed. 
+ITEMS              pot of soup:                        action: [eat], [take] 
+                    crossbow:                           action: [take], [equip] 
+                    bed:                                action: [sleep]
 
 ---------------------------------------------------------------------------------------------------------------------
-    SCENE THREE: SHACK **THIRD LOCATION**
+SCENE THREE: SHACK 
 
-Room Description:
-    She walks into the shack.  Nobody has been back here since her grandmother passed.
-    Dust covers all areas, she can hardly see as the dust particles glittering in the air make her cough. 
+ROOM DESCRIPTION:
+                    She walks into the shack.  Nobody has been back here since her grandmother passed.
+                    Dust covers all areas, she can hardly see as the dust particles glittering in the air make her cough. 
 
 The user sees tools, a pickaxe, a hammer, a dagger, shovel. 
 
