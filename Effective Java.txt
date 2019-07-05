@@ -1,4 +1,5 @@
 Chapter 1:
+
 -Java support four kinds of types:
 	1. Interfaces (including annotations)
 	2. Classes (including enums)
@@ -18,7 +19,7 @@ Chapter 2:
 Item 1: Consider static factory methods instead of constructors
 -A class can provide a public static factory method, which is simply a static method that returns an instance of the class. 
 
-Advantages of static factory methods:
+ADVANTAGES of static factory methods:
 
 1. Unlike constructors they have names
 
@@ -27,6 +28,27 @@ Advantages of static factory methods:
 -Factory methods don't share the restriction because they have names. 
 
 2. Unlike, constructors, they are not required to create a new object each time they're invoked. 
+
+-This allows immutable classes to use preconstructed instances, or to cache instances as they're constructed, and dispense them repeatedly to avoid creating unnecessary duplicate objects. 
+-This technique is similar to the Flyweight Pattern
+-It can improve performance if equivalent objects are requested often, especially if they are expensive to create. 
+-Instance Control-- the ability of static factory methods to return the same object from repeated invocations allows classes to maintain a strict control over what instances exist at any time. 
+	-Reasons to write instance controlled classes:
+		1. Allows a class to guarantee that it a singleton or noninstantiable. 
+		2. It allows an immutable value class to make the guarantee that no two equal instances exist (a.equals(b) if and only if a==b)
+
+3. Unlike constructors, they can return an object of any subtype of their return type.
+
+-Gives great flexibility in choosing the class of the returned object.
+-an API can return objects without making their classes public: hiding implementation class leads to a compact API
+-Lends itself to interface-based frameworks, where interfaces provide natural return types for static factory methods. 
+-The Collections Framework API is much smaller than it would have been had it exported 45 separate public classes, one for each convenience implementation. 
+-Not only bulk, but also conceptual weight. 
+-Conceptual Weight: the number and difficulty of concepts that programmers must master in order to use the API. 
+-Using a static factory method requires the client to refer to the returned object by interface rather than implementation class, which is generally good practice. 
+-**It may still be necessary to put the bulk of the implementation code behind these static methods in a separate package-private class-- because Java requires all static members of an interface be public. 
+
+4. 
 
 
 
