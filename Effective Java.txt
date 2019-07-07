@@ -1,4 +1,4 @@
-Chapter 1:
+Chapter 1: [PAGE 19]
 
 -Java support four kinds of types:
 	1. Interfaces (including annotations)
@@ -13,21 +13,21 @@ Chapter 1:
 -Classes, interfaces, constructors, members, and serialized forms are collectively known as API elements. 
 -In Java 9, a module system was added to the platform-- if a library makes use of the module system, its exported API is the union of the exported API's of all the packages exported by the library's module declaration. 
 
-Chapter 2:
+Chapter 2: [PAGE 23]
 **This chapter concerns creating and destroying objects, when and how to create them, when and how to avoid creating them, how to ensure they are destroyed in a timely manner, and how to manage any cleanup actions that must precede their destruction**
 
-Item 1: Consider static factory methods instead of constructors
+Item 1: Consider static factory methods instead of constructors [PAGE 23]
 -A class can provide a public static factory method, which is simply a static method that returns an instance of the class. 
 
 ADVANTAGES of static factory methods:
 
-1. Unlike constructors they have names
+1. Unlike constructors they have names [PAGE 23]
 
 -BigInteger(int, int, Random) ---> BigInteger.probablePrime. 
 -A class can only have a single constructor with a given signature. (**A bad idea is to provide two constructors whoe parameter lists differ only in the order of the parameter types: it's hard to remember)
 -Factory methods don't share the restriction because they have names. 
 
-2. Unlike, constructors, they are not required to create a new object each time they're invoked. 
+2. Unlike, constructors, they are not required to create a new object each time they're invoked. [PAGE 24]
 
 -This allows immutable classes to use preconstructed instances, or to cache instances as they're constructed, and dispense them repeatedly to avoid creating unnecessary duplicate objects. 
 -This technique is similar to the Flyweight Pattern
@@ -37,18 +37,51 @@ ADVANTAGES of static factory methods:
 		1. Allows a class to guarantee that it a singleton or noninstantiable. 
 		2. It allows an immutable value class to make the guarantee that no two equal instances exist (a.equals(b) if and only if a==b)
 
-3. Unlike constructors, they can return an object of any subtype of their return type.
+3. Unlike constructors, they can return an object of any subtype of their return type. [PAGE 24]
 
 -Gives great flexibility in choosing the class of the returned object.
 -an API can return objects without making their classes public: hiding implementation class leads to a compact API
 -Lends itself to interface-based frameworks, where interfaces provide natural return types for static factory methods. 
--The Collections Framework API is much smaller than it would have been had it exported 45 separate public classes, one for each convenience implementation. 
+-The Colletions Framework API is much smaller than it would have been had it exported 45 separate public classes, one for each convenience implementation. 
 -Not only bulk, but also conceptual weight. 
 -Conceptual Weight: the number and difficulty of concepts that programmers must master in order to use the API. 
 -Using a static factory method requires the client to refer to the returned object by interface rather than implementation class, which is generally good practice. 
--**It may still be necessary to put the bulk of the implementation code behind these static methods in a separate package-private class-- because Java requires all static members of an interface be public. 
+-**It may still be necessary to put the bulk of the implementation code behind these static methods in a seperate package-private class-- because Java requires all static members of an interface be public. 
 
-4. 
+4. The class of the returned object can vary from call to call as a function of the input parameters. [PAGE 25]
+
+-The existence of these two implementation classes is invisible to clients.  
+-Clients neither know nor care about the class of the object they get back from the factory; they care only that it is some subclass of the class
+
+**Might need to look into it**
+
+5.The class of the returned object need not exist when the class containing the method is written. [PAGE 26]
+
+-Flexible static factory methods form the basis of service provider frameworks, like the Java Database Connectivity API.  
+-A service provider framework is a system in which providers implement a service, and the system makes the implementations available to clients, decoupling the clients from the implementations
+-There are three essential components in a service provider framework.
+	1. Service Interface: which represents an implementation.
+	2. Provider Registration API: which providers use to register implementations.
+	3. Service Access API: which clients use to obtain instances of the service. 
+-Service Access API: may allow clients to specify criteria for choosing an implementation. If no criteria is provided, it retirns an instance of a default implementation or allows the client to cycle through all available implementations. It is a static factory that forms the basis of the service provider framework. 
+	4. Service  Provider Interface: which describes a factory object that produce instances of the service interface. 
+-In the absense of a service provider interface, implementations must be instantiated reflectively. 
+
+LIMITATIONS of static factory methods: [PAGE 26]
+
+1. Classes without public or protected constructors cannot be subclasses. [PAGE 26]
+
+-It is impossible to subclass any of the convenience implementation classes in the Collections Framework. 
+-It encourages programmers to use composition instead of inheritance. 
+
+2. They are hard for programmers to find. [PAGE 26]
+
+-It can be difficult to figure out how to instantiate a class that provides static factory methods instead of constructors. 
+
+Item 2: Consider a builder when faced with many constructor parameters [PAGE 28]
+-
+	
+
 
 
 
