@@ -14,6 +14,7 @@ Chapter 1: [PAGE 19]
 -In Java 9, a module system was added to the platform-- if a library makes use of the module system, its exported API is the union of the exported API's of all the packages exported by the library's module declaration. 
 
 Chapter 2: [PAGE 23]
+
 **This chapter concerns creating and destroying objects, when and how to create them, when and how to avoid creating them, how to ensure they are destroyed in a timely manner, and how to manage any cleanup actions that must precede their destruction**
 
 - - - Item 1: Consider static factory methods instead of constructors [PAGE 23]
@@ -46,7 +47,7 @@ ADVANTAGES of static factory methods:
 -Not only bulk, but also conceptual weight. 
 -Conceptual Weight: the number and difficulty of concepts that programmers must master in order to use the API. 
 -Using a static factory method requires the client to refer to the returned object by interface rather than implementation class, which is generally good practice. 
--**It may still be necessary to put the bulk of the implementation code behind these static methods in a seperate package-private class-- because Java requires all static members of an interface be public. 
+-**It may still be necessary to put the bulk of the implementation code behind these static methods in a separate package-private class-- because Java requires all static members of an interface be public. 
 
 4. The class of the returned object can vary from call to call as a function of the input parameters. [PAGE 25]
 
