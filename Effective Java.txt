@@ -96,14 +96,14 @@ LIMITATIONS of static factory methods: [PAGE 26]
 	-The class does not have the option of enforcing consistency merely by checking the validity of the constructor parameters. 
 -the JavaBean pattern precludes the possibility of making a class immutable and requires added effort on the part of the programmer to ensure thread safety. 
 -It is possible to reduce these disadvantages by manually "freezing" the object when its construction is complete an not allowing it to be used until frozen, but this variant is unwieldy and rerely used in practice.
--A third alternative combines the safety of the telescoping constuctor pattern with the readability of the JavaBeans pattern: Builder Pattern.
+-A third alternative combines the safety of the telescoping constructor pattern with the readability of the JavaBeans pattern: Builder Pattern.
 -Instead of making the desired object directly, the client calls a constructor (or static factory) with all of the required parameters and gets a builder object. 
 -Then the client calls sett-ike methods on the builder object to set each optional parameter of interest. 
 -Finally, the client calls a parameterless build method to generate the object, which is typically immutable. 
 -The builder is typically a static member class it builds.  example: [PAGE 31]
 -The builder pattern simulates named optional parameters. 
 -To detect invalid parameters as soon as possible, check parameter validity in the builder's constructor and methods. 
--The builder pattern is well suited to class hierarchies, use parallel hierachy of builders, each nested in the corresponding class.  [PAGE 35]
+-The builder pattern is well suited to class hierarchies, use parallel hierarchy of builders, each nested in the corresponding class.  [PAGE 35]
 -A minor advantage of builders over constructors is that builders can have multiple varags parameters because each parameter is specified in its own method. 
 -The builder pattern is flexible: a single builder can be used repeatedly to build multiple objects. 
 -The builder pattern has disadvantages as well
