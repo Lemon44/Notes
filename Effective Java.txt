@@ -16,7 +16,7 @@ Chapter 1: [PAGE 19]
 Chapter 2: [PAGE 23]
 **This chapter concerns creating and destroying objects, when and how to create them, when and how to avoid creating them, how to ensure they are destroyed in a timely manner, and how to manage any cleanup actions that must precede their destruction**
 
-Item 1: Consider static factory methods instead of constructors [PAGE 23]
+- - - Item 1: Consider static factory methods instead of constructors [PAGE 23]
 -A class can provide a public static factory method, which is simply a static method that returns an instance of the class. 
 
 ADVANTAGES of static factory methods:
@@ -42,7 +42,7 @@ ADVANTAGES of static factory methods:
 -Gives great flexibility in choosing the class of the returned object.
 -an API can return objects without making their classes public: hiding implementation class leads to a compact API
 -Lends itself to interface-based frameworks, where interfaces provide natural return types for static factory methods. 
--The Colletions Framework API is much smaller than it would have been had it exported 45 separate public classes, one for each convenience implementation. 
+-The Collections Framework API is much smaller than it would have been had it exported 45 separate public classes, one for each convenience implementation. 
 -Not only bulk, but also conceptual weight. 
 -Conceptual Weight: the number and difficulty of concepts that programmers must master in order to use the API. 
 -Using a static factory method requires the client to refer to the returned object by interface rather than implementation class, which is generally good practice. 
@@ -78,8 +78,53 @@ LIMITATIONS of static factory methods: [PAGE 26]
 
 -It can be difficult to figure out how to instantiate a class that provides static factory methods instead of constructors. 
 
-Item 2: Consider a builder when faced with many constructor parameters [PAGE 28]
--
+- - - Item 2: Consider a builder when faced with many constructor parameters [PAGE 28]
+
+- Static factories and constructors share a limitation: they do not scale well to large numbers of optional parameters. 
+-Example:
+	Nutrition Facts labels that appear on packaged foods. 
+	-Have a few required fields: serving size, servings per container, and calories per serving, etc. 
+
+**Traditionally, programmers have used the telescoping constructor pattern, in which you provide a constructor with only the required parameters, another with a single optional parameter, a third with two optional parameters, and so on, culminating in a constructor with all the optional parameters.  [PAGE 28-29]
+-When you want to create an instance, you use the constructor with the shortest parameter list containing all the parameters you want to set. 
+-The telescoping constructor pattern works, but it is hard to write client code when there are many parameters, and harder still to read it. 
+-Long sequences of identically typed parameters can cause subtle bugs. 
+-If the client accidentally reverses two such parameters, the compiler won't complain, but the program will misbehave at runtime.
+- A second alternative when you're faced with many optional parameters in a constructor is the JavaBeans pattern, in which you call a parameterless constructor to create the object and then call setter methods to set each required parameter and each optional parameter of interest. (example) [PAGE 30]
+-This pattern has none of the disadvantages of the telescoping constructor pattern.  It is easy, if a bit wordy, to create instances, and easy to read the resulting code. 
+-a JavaBean may be in an inconsistent state partway through its construction. 
+	-The class does not have the option of enforcing consistency merely by checking the validity of the constructor parameters. 
+-the JavaBean pattern precludes the possibility of making a class immutable and requires added effort on the part of the programmer to ensure thread safety. 
+-It is possible to reduce these disadvantages by manually "freezing" the object when its construction is complete an not allowing it to be used until frozen, but this variant is unwieldy and rerely used in practice.
+-A third alternative combines the safety of the telescoping constuctor pattern with the readability of the JavaBeans pattern: Builder Pattern.
+-Instead of making the desired object directly, the client calls a constructor (or static factory) with all of the required parameters and gets a builder object. 
+-Then the client calls sett-ike methods on the builder object to set each optional parameter of interest. 
+-Finally, the client calls a parameterless build method to generate the object, which is typically immutable. 
+-The builder is typically a static member class it builds.  example: [PAGE 31]
+-The builder pattern simulates named optional parameters. 
+-To detect invalid parameters as soon as possible, check parameter validity in the builder's constructor and methods. 
+-The builder pattern is well suited to class hierarchies, use parallel hierachy of builders, each nested in the corresponding class.  [PAGE 35]
+-A minor advantage of builders over constructors is that builders can have multiple varags parameters because each parameter is specified in its own method. 
+-The builder pattern is flexible: a single builder can be used repeatedly to build multiple objects. 
+-The builder pattern has disadvantages as well
+	-In order to create an object, you must first create the builder, it could be problematic in performance-critical situations. 
+	-The builder pattern is more verbose than the telescoping constructor pattern, so it should be used only if there enough parameters to make it worth it. 
+-The builder pattern is a good choice when designing classes whose constructors or static factories would have more than a handful of parameters. 
+
+- - - Item 3: Enforce the singleton property with a private constructor or an enum type
+
+- A singleton is simply a class that is instantiated exactly once Singletons typically represent either a stateless object such a function or a system component that is intrinsically unique. 
+-Making a class a singleton can make it difficult to test its clients. 
+-To common ways to implement singletons:
+	1. the member is a final field. 
+	2. the public member is a static factory method. 
+-The main advantage of the public field approach is that the API makes it clear that the class is a singleton: the public static field is final. 
+-Advantages of the static factory approach: it gives you the flexibility to change your mind about whether a class is a singleton without changing its API, you can write a generic singleton factory, a method reference can be used as a supplier. [PAGE37]
+	-All other times, use the public field approach. 
+
+
+
+
 	
 
 
