@@ -153,6 +153,98 @@ What you want:
 Salary Research:
 -"I'm sure you're competitive, but I am interested in finding the right fit for myself"
 
+What to Ask:
+-Why do you work here?
+-What are the working conditions?
+-What SE lifecycle is used?
+-What is the tool chain?
+-HR Questions:
+	-How are the benefits?
+	-Health, Vacation, Retirement?
+
+Types of Questions:
+-Computer Science
+-What you've done
+-Language and Frameworks
+
+Google Star Method of Interviewing:
+
+Computer Science: 
+-Algorithms and data structures
+-Big O of algorithms and choosing
+-Imperative vs. Functional
+-http://www.nerdparadise.com/tech/interview
+
+What You've Done:
+-Make sure you did what is on your resume and are ready to talk about it
+-They are looking for specifics
+-Give concrete examples
+-If you don't have an example, say so
+
+Language:
+-When would you use an anonymous inner class in Java?
+-What's a lambda? (unnamed functions)
+	-Know your versions
+-What's a closure?
+
+OO:
+-What are the major features of OO?
+	-Abstraction, encapsulation, inheritance, polymorphism
+-What is an interface?
+-What is a virtual method? (abstract)
+-What is multiple inheritance
+-Deep vs. Shallow Copies
+-Dependency Inversion/Inversion of control	
+	-Frameworks vs. Library (You call a framework a framework calls you...?)
+-Design Pattern
+
+Do Me a SOLID:
+-S: Single Responsibility Principle
+	-classes do one thing
+-O: Open-closed Principle
+	-open for extension, closed for modification
+-L: Liskov substitution Principle
+	-Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
+-I: Interface Segregation Principle
+	-Many client-Specific interfaces are better than one general-purpose interface
+-D: Dependency Inversion
+	-**Missed it
+
+Networks:
+
+Software Engineering:
+-Git, GitHub
+-Agile Manifesto
+-TDD
+-DRY, YAGNI
+-CI/CD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
