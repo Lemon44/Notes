@@ -271,6 +271,9 @@ Guerrilla Interviewing
 -Pointer/Recursion Question
 -Do you have any questions?
 
+	-How did I do?
+	-Bring a cheatsheet.
+
 
 
 
