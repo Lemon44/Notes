@@ -5,7 +5,7 @@ Sprint Planning Meeting:
 User Story: Rooms can hold items and players can hold items. 
 ---------------------------------------------------------------------------
 ***Break down whole user story:
-	-Anything bigger than 3, needs to be broken down further.
+	-Anything bigger than (3), needs to be broken down further.
 
 1. Room: 
 	Test for existence (3)
