@@ -1,0 +1,37 @@
+Sprint Planning Meeting:
+
+1  2  3  4  8   13  21 -- Fibonacci Sequence for User Story Points
+
+User Story: Rooms can hold items and players can hold items. 
+---------------------------------------------------------------------------
+***Break down whole user story:
+	-Anything bigger than 3, needs to be broken down further.
+
+1. Room: 
+	Test for existence (3)
+	Add to list (2)
+	Remove from list (2)
+	*Load from Yaml (Spike)
+	*Saving  to Room (Spike)
+
+2. Player: 
+	Test for existence (3)
+	Add to list (2)
+	Remove from list (2)
+
+3. Item:
+	*Blocker (Spike)
+
+Spike Tickets:
+	-Research Save/Load from yaml
+	1. Put in Backlog
+	2. Finish breaking up later
+
+Luke's Diagram (attempt to visualize via text):
+-----------------------------------------------------------------------------
+		Room ----> (1 or many) Items
+		Room ----> (1 or many) Players ---> (1 or many) Items
+			       
+Game -----> (1) Players [user] ----->   
+-----------------------------------------------------------------------------
+
