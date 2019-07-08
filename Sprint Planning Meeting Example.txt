@@ -27,11 +27,11 @@ Spike Tickets:
 	1. Put in Backlog
 	2. Finish breaking up later
 
-Luke's Diagram (attempt to visualize via text):
------------------------------------------------------------------------------
+***Luke's Diagram (attempt to visualize via text):
+***-----------------------------------------------------------------------------
 		Room ----> (1 or many) Items
 		Room ----> (1 or many) Players ---> (1 or many) Items
 			       
-Game -----> (1) Players [user] ----->   
------------------------------------------------------------------------------
+***Game -----> (1) Players [user] ----->   
+***------------------------------------------------------------------------------
 
