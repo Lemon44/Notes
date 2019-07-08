@@ -178,7 +178,7 @@ Computer Science:
 What You've Done:
 -Make sure you did what is on your resume and are ready to talk about it
 -They are looking for specifics
--Give concreate examples
+-Give concrete examples
 -If you don't have an example, say so
 
 Language:
@@ -255,7 +255,7 @@ Verbal Hints:
 	-Unless you almost always talk figuratively
 -Irregardless is not a word: it has never been
 	-Regardless is
-	-Irrespetive is
+	-Irrespective is
 -Don't say methodology
 	-Nonsensical. 
 -The word data is plural: use "are"
@@ -272,9 +272,15 @@ Guerrilla Interviewing
 -Do you have any questions?
 
 	-How did I do?
-	-Bring a cheatsheet.
+	-Bring a cheat sheet.
 
+Some Typical:
+-Please tell me about yourself
+-What makes you interested..
+**Missed lots of these questions
 
+Resources:
+-Cracking the Coding Interview
 
 
 
