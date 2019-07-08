@@ -178,7 +178,7 @@ Computer Science:
 What You've Done:
 -Make sure you did what is on your resume and are ready to talk about it
 -They are looking for specifics
--Give concrete examples
+-Give concreate examples
 -If you don't have an example, say so
 
 Language:
@@ -219,9 +219,57 @@ Software Engineering:
 -DRY, YAGNI
 -CI/CD
 
+Web:
+-MVC
+-ORM
+-Ajax
 
+Questions:
+-Why are manhole covers round?
+-What is 2^24?
+-How usable addresses in a class C network?
+-What are your strengths and weaknesses
+	-No kidding
+-Why do you want to work here?
+-How many trees in the continental states?
 
+Tough Questions:
+-They typically will ask a few very difficult questions:
+	-To show off
+	-To see how you reason
+-How many trees are in the CONUS? (continental united state)
+-How far away is the moon?
+-"I don't know that, but here is how I would approach the problem."
 
+Verbal Hints:
+-"We speak not only to tell other people what we think, but to tell ourselves what we think. Speech is part of..." 
+	-Oliver Sacks
+
+-Don't say "I feel like"... say, "I think" or "I believe"
+-You hopefully mean... "I think" or "I believe"
+-No one cares how you feel.
+- Try to avoid "like"
+	-Unless you're making a simile
+-Also "um", "you know", and "got"
+-Don't use "literally"
+	-Unless you almost always talk figuratively
+-Irregardless is not a word: it has never been
+	-Regardless is
+	-Irrespetive is
+-Don't say methodology
+	-Nonsensical. 
+-The word data is plural: use "are"
+-Don't make jokes
+	-Few things are universally funny
+-Be terse and don't BS
+
+Guerrilla Interviewing
+-Looking for smart people who get things done 
+-Introduction
+-Question about recent project candidate worked on
+-Easy Programming Question
+-Pointer/Recursion Question
+-Do you have any questions?
 
 
 
