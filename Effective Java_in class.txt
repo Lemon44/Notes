@@ -1,0 +1,174 @@
+Effective Java
+
+[Chapter 2:]
+
+Consider Static Factory Methods Instead of Constructors
+-------------------------------------------------------------------
+-One advantage is they have names
+	-Constructors do not and one has to differentiate via parameters
+	-This can be confusing and lead to errors
+-A class can have only one constructor with a given name
+	-Don't change order of constructor parameters to differentiate 
+-Static factory methods don't have to create a new object
+	-Constructors always do
+	-Maybe there's an object already created that works
+	-Helps with immutable classes and pre-constructed instances
+-Singletons, flyweights, non-instantiable. 
+-Can return a subtype
+	-java.util.collections contain all static methods that work on many types
+	-Polymorphic
+	-addAll, binarySearch, disjoint, frequency, min, max, sort, shuffle, reverse,...
+	-Type returned can be non-public
+	-Can vary implementation
+-Returned class need not exist at the time the class is written
+	-Allows run-time specification
+	-JDBC an example
+
+Service-Provider Framework:
+* * * * * * * * * * * * * *
+-Service interface
+-Provider registration
+-Service access
+-Optional service provider interface
+	-Factory to create service provider
+
+Java 6: -General-purpose java.util.ServiceLoader (So you don't have to write your own)
+
+Disadvantages of Static Factory Methods Instead of Constructors:
+-------------------------------------------------------------------------------
+-Classes without public or protected constructors cannot be sub-classed
+-Not called out in Javadoc
+-Popular Java static factory names
+	-valueOf, getInstance, newInstance, getType,... (style guides)
+
+Consider a Builder when faced with many Constructory Parameters (decorator):
+-----------------------------------------------------------------------------------
+-If a class has many fields that need initializing, constructors often chained/telescoped
+example of "telescoping":
+	public class NutritionFacts {
+		private final int servingSize;
+		private final int servings;
+		private final int calories;
+		private final int fat;
+		private final int sodium;
+		private final int carbohydrate;
+		
+		public NutritionFacts(int servingSize, int servings) {
+			this(servingSize, servings, 0);
+		}
+		public NutritionFacts(int servingSize, int servings, int calories) {
+			this(servingSize, servings, calories, 0);
+		} ... etc.
+
+^^^Bad form
+-You could instead create an empty instance and have many set()s
+	-Problem: instance in inconsistent state
+-Builder Pattern
+-build() is a parameter-less static method
+-Required parameters passed in to constructor
+	-Optionals set()
+	-Other languages have optional parameters instead
+	
+Example of the Builder pattern per last example:
+
+		private int calories = 0;
+		private int fat = 0;
+		private int carbohydrates = 0;
+
+		public Builder(int servingSize, int servings) {
+			this.servingSize = servingSize;
+			this.servings = servings;
+		}
+		public Builder calories(int val) {
+			calories = val;
+			return this; // Returns one of itself
+		} ... etc.
+		private NutritionFacts(Builder builder) {
+			servingSize = builder.servingSize;
+			servings = builder.servings;
+			calories = builder.calories;
+			fat = builder.fat;
+			sodium = builder.sodium;
+		}
+		public static void main(String[] args) {
+			NutritionFacts cocaCola =new NutritionFacts.Builder(240,8).
+			calories(100).sodium(35).carbohydrate(27).build();
+		}
+
+Builder for Class Hierarchies:
+
+New York Pizza example:
+
+public abstract class Pizza {
+	public enum Topping { HAM, MUSHROOM, ONION, PEPPER, SAUSAGE }
+	final Set<Toppings> toppings;
+	
+	abstract static class Builder <T extends Builder <T>> {
+		EnumSet<Topping> toppings = EnumSet.nonOf(Topping.class);
+		public addTopping(Topping topping) {
+			toppings.add(Objects.requireNonNull(topping));
+			return self();
+		}
+		abstract Pizza build();
+		protected abstract T self();
+	}
+	Pizza(Builder<?> builder... [missed it.] 
+
+Enforce the Singleton Property with a Private Constructor or an Enum Type:
+---------------------------------------------------------------------
+-Private No-Arg Constructor
+
+public class Elvis {
+	public static final Elvis INSTANCE = new Elvis ();
+	
+	private Elvis() {}
+
+	public void leaveTheBuilding() {
+		System.out.println("Whoa baby, I'm outta here!");
+	}
+	public static void main(String[] args) {
+		Elvis elvis = Elvis.INSTANCE;
+		elvis.leaveTheBuilding();
+	}
+}
+
+Static Factory:
+--------------------------------------------------------------------
+public class Elvis {
+	private static final Elvis INSTANCE = new Elvis();
+	private Elvis () {}
+	public static Elvis getInstance() {
+		return INSTANCE;
+	}
+Enumeration:
+-----------------------------------------------------------------
+public enum Elvis {
+	INSTANCE;
+
+	public void leaveTheBuilding() {
+		System.out.println("Whoa baby, I'm outta here!");
+	}
+	public stativ void main(String[] args) {
+		Elvis elvis = Elvis.INSTANCE;
+		elvis.leaveTheBuilding();
+	}
+}
+Enforce Non-Instantiability with Private Constructor:
+---------------------------------------------------------
+-Just have a private no-args constructor
+	-If have any no-args constructor, the default isn't created
+-Class cannot be sub-classed
+	-Sub-classes would need to call constructory
+-Might wnat to have constructor throw an AssertionError (Just to be safe)
+
+
+
+
+
+
+
+
+
+
+
+
