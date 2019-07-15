@@ -148,7 +148,7 @@ public enum Elvis {
 	public void leaveTheBuilding() {
 		System.out.println("Whoa baby, I'm outta here!");
 	}
-	public stativ void main(String[] args) {
+	public static void main(String[] args) {
 		Elvis elvis = Elvis.INSTANCE;
 		elvis.leaveTheBuilding();
 	}
@@ -159,13 +159,105 @@ Enforce Non-Instantiability with Private Constructor:
 	-If have any no-args constructor, the default isn't created
 -Class cannot be sub-classed
 	-Sub-classes would need to call constructory
--Might wnat to have constructor throw an AssertionError (Just to be safe)
+-Might want to have constructor throw an AssertionError (Just to be safe)
 
 
+***MISSED SOME THINGS***
 
+[CHAPTER 3]
 
+So?
+-There is no way to extend an instantiable class and add a value while preserving the equals contract
 
+Consistency:
+- - - - - - - - - - - - - -
+-Do not wrtie an equals method that depends on unreliable resources
+-Java's URL equals relies on IP address comparison
+	-What happens when not on network?
+	-What happens when network addresses change?
 
+Recipe:
+- - - - - - - -
+-Check for object == this
+-Use instanceOf to check for correct type
+-Cast argument to correct type
+-Test == for all significant fields
+	-Except for Float.compare, Double.compare, and Arrays.equal
+-Also ovverride hashCode
+-Use @Override (make sure you actually are using the signature method)
+
+Always Override hashCode when you Override equals:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-When invoked on the same object, and the object hasn't changed to affect equals, always return the same integer
+	-Does not have to be the same integer from runtime to runtime
+-If two objects are equals, both hashCodes must be the same
+-If they are not equals, it is not required to product distinct hashCodes
+	-If not, hash table performance can be affected
+	-"return 42" is legal, but horrible (everything will always collide)
+-Don't rely on hashcodes, sometimes unsafe. 
+-Creating a hashCode (How Java does it)
+	-Set result = 17
+	-For all the fields
+		-If boolean, c = f ? 1:0
+		-If byte, char, short, or int, c = (int) f
+		-If long, c = (int)(f^(f>>>32))
+		-If float, c = Float.floatToIntBits(f)
+		-If double, c = (int)(Double.doubleToLongBits(f)^.... **missed it**
+-Update result = 31 * result + c
+-Exclude any redundant fields
+	-Which you shouldn't have
+-Ignore any fields ignored by equals
+
+Creating a hashCode:
+- - - - - - - - - - - - - - - - - - - - - - - - -
+	public final class PhoneNumber {
+		private final short areaCode;
+		private final short prefix;
+		private final short lineNumber;
+		private volatile int hashCode;
+
+	//Lazy initialization
+	@Override public int hashCode() {
+	.....missed it
+
+-If two things are .equals, their hashCodes must also be the same
+	-If hashing is really fast, and equals is really slow, maybe you call them inside eachother
+	-But really you have to call them both
+
+Always Override toString:
+- - - - - - - - - - - - - - - - - - - - - - - - 
+	-Makes class much more pleasant to use
+	-Whe practical, toString should return all interesting information in object
+	-One has to choose the format returned 
+		-Good idea to create a constructor or static factory that takes string representation and creates object
+	-Provide access to values in toString via getters
+		*lombok (toString, EqualsAnd HashCode)
+
+Override clone Judiciously: (DON'T DO IT)
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+-Creates and returns a copy of an object
+	-x.clone() ! = x
+	-x.clone().getClass() == x.getClass()
+	-x.clone().equals(x)
+	-Constructors are not called
+-Don't clone an immutable object
+-Instead, you can provide a copy constructor or factory
+-Interfaces should not extend Cloneable
+-Classes designed for inheritance should not implement it
+
+Consider Implementing Comparable:
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+-Similar to equals
+	-But provides ordering information
+	-Is generic
+	-Useful in e.g. Arrays.sort()
+-Returns comparison between two objects
+	- -1 if first less than second
+	- 0 if equal to 
+	- 1 if first greater than second
+
+Compare versus Equals:
+ - - - - - - - - - - - - - - - - - - - - 
 
 
 
