@@ -259,8 +259,42 @@ Consider Implementing Comparable:
 Compare versus Equals:
  - - - - - - - - - - - - - - - - - - - - 
 
+[CHAPTER 4]
 
+Minimize the Accessibility of Classes and Members:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+-Encapsulation
+-Decouples modules allowing them to be developed, tested, optimized, used, understood, and modified in isolation
+-"The single most important factor that distinguishes a well-designed module from a poorly-designed one is the degree to which the module hides its internal data and other implementation details from other modules"
+-Make each class or member as inaccessible as possible
+-If used nowhere else, nest a class within the class that uses it
+-Don't make any variable/field/attribute public
+	-At worst, make it package-private
+-Try to avoid protected too
+	-Must always support
+	-Exposes implementation detail to subclasses
+	-Should be rare
+-If a method overrides a superclass method, it must have the same access level
+	-To not violate the Liskov inversion principle
+-Implementing an interface requires all methods to be public
+	-Implicit in implementing an interface
+-Instance fields should never be public
+	-Limits typing
+	-Limits invariants
+	-Are not thread-safe
+-Arrays are always mutable
+	-Never have a public static final array field
+	-Or an accessor that retruns such a beast
+	-Be careful of IDE's that create accessors automatically
+**if you are returning an array, return the copy of the array, for security
 
+In Public Classes, use Accessor Methods, not Public Fields:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+-Book still insists on using lame examples of sets instead of simply making fields public
+	-With the ostensible argument that we can change internal representation
+		-But we never do
+		-And if we do, we break the preexisting API contract
+	-Less harmful if immutable
 
 
 
