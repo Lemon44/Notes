@@ -2,10 +2,14 @@ Effective Java Notes:
 Nicole Beck
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 [Chapter 2]:
 
-Consider Static Factory Methods Instead of Constructors
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Consider Static Factory Methods Instead of Constructors:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -One advantage is they have names
 	-Constructors do not and one has to differentiate via parameters
 	-This can be confusing and lead to errors
@@ -37,14 +41,18 @@ Service-Provider Framework:
 Java 6: -General-purpose java.util.ServiceLoader (So you don't have to write your own)
 
 Disadvantages of Static Factory Methods Instead of Constructors:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Classes without public or protected constructors cannot be sub-classed
 -Not called out in Javadoc
 -Popular Java static factory names
 	-valueOf, getInstance, newInstance, getType,... (style guides)
 
 Consider a Builder when faced with many Constructory Parameters (decorator):
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -If a class has many fields that need initializing, constructors often chained/telescoped
 example of "telescoping":
 	public class NutritionFacts {
@@ -98,7 +106,8 @@ Example of the Builder pattern per last example:
 		}
 
 Builder for Class Hierarchies:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 New York Pizza example:
 
@@ -118,7 +127,9 @@ public abstract class Pizza {
 	Pizza(Builder<?> builder... [missed it.] 
 
 Enforce the Singleton Property with a Private Constructor or an Enum Type:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Private No-Arg Constructor
 
 public class Elvis {
@@ -136,7 +147,9 @@ public class Elvis {
 }
 
 Static Factory:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 public class Elvis {
 	private static final Elvis INSTANCE = new Elvis();
 	private Elvis () {}
@@ -145,7 +158,9 @@ public class Elvis {
 	}
 
 Enumeration:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 public enum Elvis {
 	INSTANCE;
 
@@ -157,8 +172,11 @@ public enum Elvis {
 		elvis.leaveTheBuilding();
 	}
 }
+
 Enforce Non-Instantiability with Private Constructor:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Just have a private no-args constructor
 	-If have any no-args constructor, the default isn't created
 -Class cannot be sub-classed
@@ -169,20 +187,26 @@ Enforce Non-Instantiability with Private Constructor:
 ***MISSED SOME THINGS***
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 [CHAPTER 3]:
 
 So?
 -There is no way to extend an instantiable class and add a value while preserving the equals contract
 
 Consistency:
-- - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Do not wrtie an equals method that depends on unreliable resources
 -Java's URL equals relies on IP address comparison
 	-What happens when not on network?
 	-What happens when network addresses change?
 
 Recipe:
-- - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Check for object == this
 -Use instanceOf to check for correct type
 -Cast argument to correct type
@@ -192,7 +216,9 @@ Recipe:
 -Use @Override (make sure you actually are using the signature method)
 
 Always Override hashCode when you Override equals:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -When invoked on the same object, and the object hasn't changed to affect equals, always return the same integer
 	-Does not have to be the same integer from runtime to runtime
 -If two objects are equals, both hashCodes must be the same
@@ -214,7 +240,9 @@ Always Override hashCode when you Override equals:
 -Ignore any fields ignored by equals
 
 Creating a hashCode:
-- - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 	public final class PhoneNumber {
 		private final short areaCode;
 		private final short prefix;
@@ -230,7 +258,9 @@ Creating a hashCode:
 	-But really you have to call them both
 
 Always Override toString:
-- - - - - - - - - - - - - - - - - - - - - - - - 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 	-Makes class much more pleasant to use
 	-Whe practical, toString should return all interesting information in object
 	-One has to choose the format returned 
@@ -239,7 +269,9 @@ Always Override toString:
 		*lombok (toString, EqualsAnd HashCode)
 
 Override clone Judiciously: (DON'T DO IT)
-- - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Creates and returns a copy of an object
 	-x.clone() ! = x
 	-x.clone().getClass() == x.getClass()
@@ -251,7 +283,9 @@ Override clone Judiciously: (DON'T DO IT)
 -Classes designed for inheritance should not implement it
 
 Consider Implementing Comparable:
-- - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Similar to equals
 	-But provides ordering information
 	-Is generic
@@ -262,14 +296,17 @@ Consider Implementing Comparable:
 	- 1 if first greater than second
 
 Compare versus Equals:
- - - - - - - - - - - - - - - - - - - - - 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 **Missed it**
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 [CHAPTER 4]:
 
 Minimize the Accessibility of Classes and Members:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Encapsulation
 -Decouples modules allowing them to be developed, tested, optimized, used, understood, and modified in isolation
 -"The single most important factor that distinguishes a well-designed module from a poorly-designed one is the degree to which the module hides its internal data and other implementation details from other modules"
@@ -296,7 +333,9 @@ Minimize the Accessibility of Classes and Members:
 **if you are returning an array, return the copy of the array, for security
 
 In Public Classes, use Accessor Methods, not Public Fields:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -Book still insists on using lame examples of sets instead of simply making fields public
 	-With the ostensible argument that we can change internal representation
 		-But we never do
@@ -304,7 +343,9 @@ In Public Classes, use Accessor Methods, not Public Fields:
 	-Less harmful if immutable
 
 Minimize Mutability:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -All information provided at construction
 -Any changes result in new objects
 	-Which is in general true
@@ -337,7 +378,9 @@ Minimize Mutability:
 	-Make every field final unless there is a compelling reason not to
 
 Favor Composition over Inheritance:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -GO4
 -Inheritance violates encapsulation
 	-Subclass depends on superclass's implementation
@@ -356,13 +399,62 @@ public class InstrumentedHashSet <E> extends HashSet <E> {
 
 
 Compose Instead:
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 -An InstrumentedHashSet HAS A HashSet instead of extending a HashSet
 	-And extends a ForwardingSet class
 -Have methods forward to the referenced type
 -These are WRAPPER classes
 	-AKA decorator classes
 
+Inheritance:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Is-A relationship
+-Is every instance of a subclass really an instance of the superclass?
+	-If not, have a private instance of the referred-to class
+
+Desing and Document for Inheritance:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-The only way to test a class designed for inheritance is to write a subclasses
+-Constructors must not call over-ridable methods
+	-Directly or indirectly
+	-A superclass constructor runs before a subclass constructor, so any subclass methods that are overridden will be called before constructor called
+
+**Some java examples that I didn't type**
+
+-Final Data field has two different states
+-Not a null pointer exception because println checks carefully
+-One has to be very careful when creating classes for sub-classing
+	-One way is to make class final
+	-Other is to provide no public or package-private constructors
+
+Prefer Interfaces to Abstract Classes:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Classes force inheritance
+	-Java is single inheritance
+-Existing classes can be easily changed to implement interface
+-Interfaces are ideal for defining mixins
+	-Loosely, a mixin is an additional type for a class
+	-Useful for polymorphism
+	-Know what methods are available to client, which in general define a type
+-Can create skeletal implementation for each interface
+	-Generally call AbstactInterface(SkeletonInterface might be better)
+	-AbstractCollection, Map, List, Set
+-Abstract classes do permit multiple implementations
+	-Easier to evolve
+	-If you want to add a method, can add and implement
+	-Everything else still works
+-Once an interface is released, much more difficult to change
+	-Requires all dependent class...
+
+**Use Interfaces Only to Define Types**
 
 
 
