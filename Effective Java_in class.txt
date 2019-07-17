@@ -1,9 +1,11 @@
-Effective Java
+Effective Java Notes:
+Nicole Beck
 
-[Chapter 2:]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+[Chapter 2]:
 
 Consider Static Factory Methods Instead of Constructors
--------------------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -One advantage is they have names
 	-Constructors do not and one has to differentiate via parameters
 	-This can be confusing and lead to errors
@@ -35,14 +37,14 @@ Service-Provider Framework:
 Java 6: -General-purpose java.util.ServiceLoader (So you don't have to write your own)
 
 Disadvantages of Static Factory Methods Instead of Constructors:
--------------------------------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -Classes without public or protected constructors cannot be sub-classed
 -Not called out in Javadoc
 -Popular Java static factory names
 	-valueOf, getInstance, newInstance, getType,... (style guides)
 
 Consider a Builder when faced with many Constructory Parameters (decorator):
------------------------------------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -If a class has many fields that need initializing, constructors often chained/telescoped
 example of "telescoping":
 	public class NutritionFacts {
@@ -96,6 +98,7 @@ Example of the Builder pattern per last example:
 		}
 
 Builder for Class Hierarchies:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 New York Pizza example:
 
@@ -115,7 +118,7 @@ public abstract class Pizza {
 	Pizza(Builder<?> builder... [missed it.] 
 
 Enforce the Singleton Property with a Private Constructor or an Enum Type:
----------------------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -Private No-Arg Constructor
 
 public class Elvis {
@@ -133,15 +136,16 @@ public class Elvis {
 }
 
 Static Factory:
---------------------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 public class Elvis {
 	private static final Elvis INSTANCE = new Elvis();
 	private Elvis () {}
 	public static Elvis getInstance() {
 		return INSTANCE;
 	}
+
 Enumeration:
------------------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 public enum Elvis {
 	INSTANCE;
 
@@ -154,7 +158,7 @@ public enum Elvis {
 	}
 }
 Enforce Non-Instantiability with Private Constructor:
----------------------------------------------------------
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 -Just have a private no-args constructor
 	-If have any no-args constructor, the default isn't created
 -Class cannot be sub-classed
@@ -164,7 +168,8 @@ Enforce Non-Instantiability with Private Constructor:
 
 ***MISSED SOME THINGS***
 
-[CHAPTER 3]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+[CHAPTER 3]:
 
 So?
 -There is no way to extend an instantiable class and add a value while preserving the equals contract
@@ -258,8 +263,10 @@ Consider Implementing Comparable:
 
 Compare versus Equals:
  - - - - - - - - - - - - - - - - - - - - 
+**Missed it**
 
-[CHAPTER 4]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+[CHAPTER 4]:
 
 Minimize the Accessibility of Classes and Members:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -295,6 +302,69 @@ In Public Classes, use Accessor Methods, not Public Fields:
 		-But we never do
 		-And if we do, we break the preexisting API contract
 	-Less harmful if immutable
+
+Minimize Mutability:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+-All information provided at construction
+-Any changes result in new objects
+	-Which is in general true
+-Don't provide methods that modify an object's state
+	-Mutators
+-Ensure class cannot be extended (make them final)
+	-Subclasses can't change intent 
+	-Unless you truly want to extend the class
+-Make all fields final
+-Make all fields private
+-Ensure client cannot obtain references to mutable data
+	-Don't use client-provided reference
+	-Don't return direct object reference
+	-Make defensive copies
+-Immutable objects are simple
+	-Always the same behavior
+	-Never global data
+-Immutable objects are thread-safe
+	-Implicitly parallelizable
+	-No synchronization needed
+
+**Python is horrible for threading, Scala is probably the best for threading**
+
+-Only possible downside is the need for an object for each value 
+	-But: objects are in general cheap
+	-Are you sure it's inefficient?
+-"Classes should be immutable unless there is a very good reason to make them mutable"
+	-At the very least, from an external point of view
+-If cannot be immutable, limit mutability as much as possible
+	-Make every field final unless there is a compelling reason not to
+
+Favor Composition over Inheritance:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+-GO4
+-Inheritance violates encapsulation
+	-Subclass depends on superclass's implementation
+
+Implementation Details:
+
+import Java.util.Arrays;
+import Java.util.Collection;
+import java.util.HashSet;
+
+public class InstrumentedHashSet <E> extends HashSet <E> {
+	private int addCount
+
+
+**missed it***
+
+
+Compose Instead:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+-An InstrumentedHashSet HAS A HashSet instead of extending a HashSet
+	-And extends a ForwardingSet class
+-Have methods forward to the referenced type
+-These are WRAPPER classes
+	-AKA decorator classes
+
+
+
 
 
 
