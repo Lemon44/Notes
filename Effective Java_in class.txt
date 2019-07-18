@@ -7,7 +7,6 @@ Nicole Beck
 [Chapter 2]:
 
 Consider Static Factory Methods Instead of Constructors:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -One advantage is they have names
@@ -41,7 +40,6 @@ Service-Provider Framework:
 Java 6: -General-purpose java.util.ServiceLoader (So you don't have to write your own)
 
 Disadvantages of Static Factory Methods Instead of Constructors:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Classes without public or protected constructors cannot be sub-classed
@@ -50,7 +48,6 @@ Disadvantages of Static Factory Methods Instead of Constructors:
 	-valueOf, getInstance, newInstance, getType,... (style guides)
 
 Consider a Builder when faced with many Constructory Parameters (decorator):
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -If a class has many fields that need initializing, constructors often chained/telescoped
@@ -106,7 +103,6 @@ Example of the Builder pattern per last example:
 		}
 
 Builder for Class Hierarchies:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 New York Pizza example:
@@ -127,7 +123,6 @@ public abstract class Pizza {
 	Pizza(Builder<?> builder... [missed it.] 
 
 Enforce the Singleton Property with a Private Constructor or an Enum Type:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Private No-Arg Constructor
@@ -147,7 +142,6 @@ public class Elvis {
 }
 
 Static Factory:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 public class Elvis {
@@ -158,7 +152,6 @@ public class Elvis {
 	}
 
 Enumeration:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 public enum Elvis {
@@ -174,7 +167,6 @@ public enum Elvis {
 }
 
 Enforce Non-Instantiability with Private Constructor:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Just have a private no-args constructor
@@ -195,7 +187,6 @@ So?
 -There is no way to extend an instantiable class and add a value while preserving the equals contract
 
 Consistency:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Do not wrtie an equals method that depends on unreliable resources
@@ -204,7 +195,6 @@ Consistency:
 	-What happens when network addresses change?
 
 Recipe:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Check for object == this
@@ -216,7 +206,6 @@ Recipe:
 -Use @Override (make sure you actually are using the signature method)
 
 Always Override hashCode when you Override equals:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -When invoked on the same object, and the object hasn't changed to affect equals, always return the same integer
@@ -240,7 +229,6 @@ Always Override hashCode when you Override equals:
 -Ignore any fields ignored by equals
 
 Creating a hashCode:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 	public final class PhoneNumber {
@@ -258,7 +246,6 @@ Creating a hashCode:
 	-But really you have to call them both
 
 Always Override toString:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 	-Makes class much more pleasant to use
@@ -269,7 +256,6 @@ Always Override toString:
 		*lombok (toString, EqualsAnd HashCode)
 
 Override clone Judiciously: (DON'T DO IT)
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Creates and returns a copy of an object
@@ -283,7 +269,6 @@ Override clone Judiciously: (DON'T DO IT)
 -Classes designed for inheritance should not implement it
 
 Consider Implementing Comparable:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Similar to equals
@@ -296,15 +281,14 @@ Consider Implementing Comparable:
 	- 1 if first greater than second
 
 Compare versus Equals:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 **Missed it**
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 [CHAPTER 4]:
 
 Minimize the Accessibility of Classes and Members:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Encapsulation
@@ -333,7 +317,6 @@ Minimize the Accessibility of Classes and Members:
 **if you are returning an array, return the copy of the array, for security
 
 In Public Classes, use Accessor Methods, not Public Fields:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Book still insists on using lame examples of sets instead of simply making fields public
@@ -343,7 +326,6 @@ In Public Classes, use Accessor Methods, not Public Fields:
 	-Less harmful if immutable
 
 Minimize Mutability:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -All information provided at construction
@@ -378,7 +360,6 @@ Minimize Mutability:
 	-Make every field final unless there is a compelling reason not to
 
 Favor Composition over Inheritance:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -GO4
@@ -399,7 +380,6 @@ public class InstrumentedHashSet <E> extends HashSet <E> {
 
 
 Compose Instead:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -An InstrumentedHashSet HAS A HashSet instead of extending a HashSet
@@ -409,7 +389,6 @@ Compose Instead:
 	-AKA decorator classes
 
 Inheritance:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Is-A relationship
@@ -417,7 +396,6 @@ Inheritance:
 	-If not, have a private instance of the referred-to class
 
 Desing and Document for Inheritance:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -The only way to test a class designed for inheritance is to write a subclasses
@@ -434,7 +412,6 @@ Desing and Document for Inheritance:
 	-Other is to provide no public or package-private constructors
 
 Prefer Interfaces to Abstract Classes:
-
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -Classes force inheritance
@@ -455,6 +432,103 @@ Prefer Interfaces to Abstract Classes:
 	-Requires all dependent class...
 
 **Use Interfaces Only to Define Types**
+
+Prefer Class Hierarchies to Tagged Classes:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Verbose, error-prone, and inefficient
+-**Missed it**
+-Often when you're diving into switches, you may want to see why you're using them
+
+-**if you believe your program is too slow, run it through a _____________. Write the clearest code you can and then figure out why it is slow. 
+
+Use Function Objects to Represent Strategies
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Java didn't have method references
+-Trailing edge
+-**Missed it**
+
+Favor Static Member Classes Over Non-Static:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-A nested class is defined within another class (Hide as much as possible)
+-Only serves the enclosing class
+-Four kinds:
+	-Static (not dynamic, not an inner class)
+	-Non-Static
+	-Anonymous
+	-Local
+-Last three are called inner classes
+-For example, in a linked list, nodes do not need to refer to head, tail, etc., from a list class
+-No need for node to contain all the data in list, so it can be a static member class
+-One way to think of this is that the static member calss could be a separate class, but the code reads better with it inside
+
+Anonymous Classes:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Have no names
+-Not a member of enclosing class
+-Declared and instantiated at the same place
+-**Missed it**
+-In more modern Java we use a lambda (An anonymous method)
+
+Anonymous Inner Class:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+**Example**
+
+Local Class:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+public void myMethod() {
+	class LocalClass implements Runnable {
+		public void run() {
+			System.out.println("Child Thread");
+		}
+	}
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+[CHAPTER 5]:
+
+Typing:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Java's type system is very complex
+-It add various mechanisms to add "generics"
+-Other lanugages simply have references to objects and duck typing
+
+Generic Types:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Generic classes and interfaces are known as generic types
+-Generic types define sets of parameterized types
+-.equals always takes in a capital O Object, but generally you don't use Object
+
+Unbounded Wildcard:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-<?> (This represents an unbounded wildcard)
+
+Prefer Lists to Arrays:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Arrays are covariant
+	-If sub is a subtype of super, sub[] is a subtype of super[]
+-Generics are invariant
+	-List<t1> is never a subtype of List<t2>
+
+Covariance:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+
+
+
 
 
 
