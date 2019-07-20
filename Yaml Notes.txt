@@ -3,7 +3,7 @@ PyYaml Documentation overview:
 install using pip install PyYaml
 
 **By default, PyYaml chooses the style of collection based on if it has nesting collections. 
-    If it doesn't have nesting collections, it will be assigned the flow styl eand not the block style. 
+    If it doesn't have nesting collections, it will be assigned the flow style and not the block style. 
 
 If you always want the collections to be serialized in the block style, set the parameter default_flow_style of dump() to False. 
 
@@ -63,9 +63,10 @@ Dumping instances of a python class:
 
 !!python/object:__main__.Hero {hp: -3, name: Galain Ysseleg, sp: 2}
 
-Constructors, representer, resolvers:
+Constructors, representor, resolvers:
 
-    You may define your own application-specific tags.  The easiest way to do it is to define a subclass of yaml.YAMLObject:
+    You may define your own application-specific tags.  
+    The easiest way to do it is to define a subclass of yaml.YAMLObject:
     
     >>> class Monster(yaml.YAMLObject):
 ...     yaml_tag = u'!Monster'
@@ -123,7 +124,8 @@ emit(events, stream=None, Dumper=Dumper,
     line_break=None)
 parse(stream) parses the given stream and produces a sequence of parsing events.
 
-emit(events, stream=None) serializes the given sequence of parsing events and writes them to the stream. if stream is None, it returns the produced stream.
+emit(events, stream=None) serializes the given sequence of parsing events and writes them to the stream. 
+    if stream is None, it returns the produced stream.
 
 compose(stream, Loader=Loader)
 compose_all(stream, Loader=Loader)
@@ -140,13 +142,16 @@ serialize(node, stream=None, Dumper=Dumper,
     allow_unicode=None,
     line_break=None)
 serialize_all(nodes, stream=None, Dumper=Dumper, ...)
-compose(stream) parses the given stream and returns the root of the representation graph for the first document in the stream. If there are no documents in the stream, it returns None.
+compose(stream) parses the given stream and returns the root of the representation graph for the first document in the stream. 
+    If there are no documents in the stream, it returns None.
 
 compose_all(stream) parses the given stream and returns a sequence of representation graphs corresponding to the documents in the stream.
 
-serialize(node, stream=None) serializes the given representation graph into the stream. If stream is None, it returns the produced stream.
+serialize(node, stream=None) serializes the given representation graph into the stream. 
+    If stream is None, it returns the produced stream.
 
-serialize_all(node, stream=None) serializes the given sequence of representation graphs into the given stream. If stream is None, it returns the produced stream.
+serialize_all(node, stream=None) serializes the given sequence of representation graphs into the given stream. 
+    If stream is None, it returns the produced stream.
 
 load(stream, Loader=Loader)
 load_all(stream, Loader=Loader)
@@ -171,23 +176,33 @@ dump_all(data, stream=None, Dumper=Dumper, ...)
 
 safe_dump(data, stream=None, ...)
 safe_dump_all(data, stream=None, ...)
-load(stream) parses the given stream and returns a Python object constructed from for the first document in the stream. If there are no documents in the stream, it returns None.
+load(stream) parses the given stream and returns a Python object constructed from for the first document in the stream. 
+    If there are no documents in the stream, it returns None.
 
 load_all(stream) parses the given stream and returns a sequence of Python objects corresponding to the documents in the stream.
 
-safe_load(stream) parses the given stream and returns a Python object constructed from for the first document in the stream. If there are no documents in the stream, it returns None. safe_load recognizes only standard YAML tags and cannot construct an arbitrary Python object.
+safe_load(stream) parses the given stream and returns a Python object constructed from for the first document in the stream. 
+    If there are no documents in the stream, it returns None. 
+    safe_load recognizes only standard YAML tags and cannot construct an arbitrary Python object.
 
-A python object can be marked as safe and thus be recognized by yaml.safe_load. To do this, derive it from yaml.YAMLObject (as explained in section Constructors, representers, resolvers) and explicitly set its class property yaml_loader to yaml.SafeLoader.
+A python object can be marked as safe and thus be recognized by yaml.safe_load. 
+To do this, derive it from yaml.YAMLObject (as explained in section Constructors, representors, resolvers) and explicitly set its class property yaml_loader to yaml.SafeLoader.
 
-safe_load_all(stream) parses the given stream and returns a sequence of Python objects corresponding to the documents in the stream. safe_load_all recognizes only standard YAML tags and cannot construct an arbitrary Python object.
+safe_load_all(stream) parses the given stream and returns a sequence of Python objects corresponding to the documents in the stream. 
+    safe_load_all recognizes only standard YAML tags and cannot construct an arbitrary Python object.
 
-dump(data, stream=None) serializes the given Python object into the stream. If stream is None, it returns the produced stream.
+dump(data, stream=None) serializes the given Python object into the stream. 
+    If stream is None, it returns the produced stream.
 
-dump_all(data, stream=None) serializes the given sequence of Python objects into the given stream. If stream is None, it returns the produced stream. Each object is represented as a YAML document.
+dump_all(data, stream=None) serializes the given sequence of Python objects into the given stream. 
+    If stream is None, it returns the produced stream. Each object is represented as a YAML document.
 
-safe_dump(data, stream=None) serializes the given Python object into the stream. If stream is None, it returns the produced stream. safe_dump produces only standard YAML tags and cannot represent an arbitrary Python object.
+safe_dump(data, stream=None) serializes the given Python object into the stream. 
+    If stream is None, it returns the produced stream. safe_dump produces only standard YAML tags and cannot represent an arbitrary Python object.
 
-safe_dump_all(data, stream=None) serializes the given sequence of Python objects into the given stream. If stream is None, it returns the produced stream. Each object is represented as a YAML document. safe_dump_all produces only standard YAML tags and cannot represent an arbitrary Python object.
+safe_dump_all(data, stream=None) serializes the given sequence of Python objects into the given stream. 
+    If stream is None, it returns the produced stream. Each object is represented as a YAML document. 
+    safe_dump_all produces only standard YAML tags and cannot represent an arbitrary Python object.
 
 def constructor(loader, node):
     # ...
@@ -199,27 +214,41 @@ def multi_constructor(loader, tag_suffix, node):
 
 add_constructor(tag, constructor, Loader=Loader)
 add_multi_constructor(tag_prefix, multi_constructor, Loader=Loader)
-add_constructor(tag, constructor) specifies a constructor for the given tag. A constructor is a function that converts a node of a YAML representation graph to a native Python object. A constructor accepts an instance of Loader and a node and returns a Python object.
+add_constructor(tag, constructor) specifies a constructor for the given tag. 
+    A constructor is a function that converts a node of a YAML representation graph to a native Python object. 
+    A constructor accepts an instance of Loader and a node and returns a Python object.
 
-add_multi_constructor(tag_prefix, multi_constructor) specifies a multi_constructor for the given tag_prefix. A multi-constructor is a function that converts a node of a YAML representation graph to a native Python object. A multi-constructor accepts an instance of Loader, the suffix of the node tag, and a node and returns a Python object.
+add_multi_constructor(tag_prefix, multi_constructor) specifies a multi_constructor for the given tag_prefix. 
+    A multi-constructor is a function that converts a node of a YAML representation graph to a native Python object. 
+    A multi-constructor accepts an instance of Loader, the suffix of the node tag, and a node and returns a Python object.
 
-def representer(dumper, data):
+def representor(dumper, data):
     # ...
     return node
 
-def multi_representer(dumper, data):
+def multi_representor(dumper, data):
     # ...
     return node
 
-add_representer(data_type, representer, Dumper=Dumper)
-add_multi_representer(base_data_type, multi_representer, Dumper=Dumper)
-add_representer(data_type, representer) specifies a representer for Python objects of the given data_type. A representer is a function that converts a native Python object to a node of a YAML representation graph. A representer accepts an instance of Dumper and an object and returns a node.
+add_representor(data_type, representor, Dumper=Dumper)
+add_multi_representor(base_data_type, multi_representor, Dumper=Dumper)
+add_representor(data_type, representor) specifies a representor for Python objects of the given data_type.
 
-add_multi_representer(base_data_type, multi_representer) specifies a multi_representer for Python objects of the given base_data_type or any of its subclasses. A multi-representer is a function that converts a native Python object to a node of a YAML representation graph. A multi-representer accepts an instance of Dumper and an object and returns a node.
+    A representor is a function that converts a native Python object to a node of a YAML representation graph. 
+    A representor accepts an instance of Dumper and an object and returns a node.
+
+add_multi_representor(base_data_type, multi_representor) specifies a multi_representor for Python objects of the given base_data_type or any of its subclasses. 
+    A multi-representor is a function that converts a native Python object to a node of a YAML representation graph. 
+    A multi-representor accepts an instance of Dumper and an object and returns a node.
 
 add_implicit_resolver(tag, regexp, first, Loader=Loader, Dumper=Dumper)
 add_path_resolver(tag, path, kind, Loader=Loader, Dumper=Dumper)
-add_implicit_resolver(tag, regexp, first) adds an implicit tag resolver for plain scalars. If the scalar value is matched the given regexp, it is assigned the tag. first is a list of possible initial characters or None.
+add_implicit_resolver(tag, regexp, first) adds an implicit tag resolver for plain scalars. 
 
-add_path_resolver(tag, path, kind) adds a path-based implicit tag resolver. A path is a list of keys that form a path to a node in the representation graph. Paths elements can be string values, integers, or None. The kind of a node can be str, list, dict, or None.
+    If the scalar value is matched the given regexp, it is assigned the tag. first is a list of possible initial characters or None.
+
+add_path_resolver(tag, path, kind) adds a path-based implicit tag resolver. 
+    
+    A path is a list of keys that form a path to a node in the representation graph. Paths elements can be string values, integers, or None. 
+    The kind of a node can be str, list, dict, or None.
 ----------------------------------------------

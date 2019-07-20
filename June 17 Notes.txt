@@ -80,7 +80,7 @@ Vaporware: In the computer industry, vaporware (or vapourware) is a product, typ
 
 Working Software over Comprehensive Documentation
 -Software without documentation is a disaster
--Need to describe system and documnet design decisions
+-Need to describe system and document design decisions
 -Large amounts of documentation can become cumbersome and out of sync 
 	-If too much documentation occurs, refactor and try again
 -Knowledge transferred in the team by direct interaction

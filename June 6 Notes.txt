@@ -3,7 +3,7 @@ Program Requirements:
 -User Stories
 -Statements that define and quantify what the program needs to do. Software Requirements tend to change.
 
-Functionl Requirements: 
+Functional Requirements: 
 -What  a program needs to do. (yes or no)
 
 Non-Functional Requirements: 

@@ -1,14 +1,14 @@
-What is a dictonary?
+What is a dictionary?
 -key values
 
 Python is a bunch of dictionaries all of the time. 
 Everything in python is a dictionary.
 
-Recommendation: play to its strenghts: python's strength is dictionaries.
+Recommendation: play to its strengths: python's strength is dictionaries.
 ***Take verbs and objects and do stuff
 
 One approach is to have a dictionary of dictionaries. 
-Outer dictioner could be verbs and inner could be objects. 
+Outer dictionary could be verbs and inner could be objects. 
 
 Python allows you to ask for specific keys to dictionaries. 
 
@@ -22,7 +22,7 @@ you can refer to this value any place.
 
 key: {"go", foo}
 
-Leverage python's strenghts. Find out "why" this language was developed. 
+Leverage python's strengths. Find out "why" this language was developed. 
 2 of python's strengths:
 dictionaries, method references
 
@@ -37,10 +37,10 @@ Non-Functional Requirements Examples:
 
 Performance
 Real-time Performance
-Maintainabiliyt
+Maintainability
 -Readability
 -Modularity
--Debuability
+-Durability
 -Traceability
 Modifiability
 -Lots will change
@@ -137,7 +137,7 @@ Never write a linked list. Nobody cares, ever again.
 Guideline: Reviews!! (Huge!)
 
 -Code reviews are very effective for improving quality
--Knowing that someone else will be looking affeects you 
+-Knowing that someone else will be looking affects you 
 -Others know things you don't 
 -Paired programming 
 -Helps you, facilitates learning 
