@@ -522,8 +522,108 @@ Prefer Lists to Arrays:
 
 Covariance:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+**prefer compile errors vs. runtime errors. 
 
+Arrays Versus Generics:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+-Arrays are reified
+	-Their element types are enforced at runtime
+-Generics are implemented by type erasure
+	-Types enforced at compile time and erase type at run time
+-Cannot create arrys of generic types, parameterized types, or type parameters
+
+Favor Generic Methods:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+**Sets must contain elements of the same type
+
+Bounded Wildcards: (?)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-List<String> is not a subtype of List<Object>
+-However, every object is a subtype of itself
+-So, can have a parameter that "extends" a generic 
+-And have a parameters that is a supertype.. **Missed it
+
+Producers and Consumers: (extends) (super)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+When to Use:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+-Use bounded wildcards in methods that have producer or consumer parameters
+	-Maybe not a great idea anyway
+-PECS: Producer/Extends, Consumer/Super
+-**Missed it***
+-Instead of this look into Java streams
+
+**in general generic parameters are great, but wildcard types are difficult to understand**
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+[CHAPTER 6]:
+
+Use Enumberations Instead of Integer Constants:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Java:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Java's Enumerations are more powerful than other languages'
+-Almost Classes
+	-Can't extend, but can implement an interface
+-Export one instance of each enumeration via a public static final field
+-Enum are final
+	-Only one instance
+-Provide compile-time type safety
+-Can't pass or assgn incorrectly
+
+Enumerations:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Don't count on ordinal values
+-Use constructor instead
+-Use EnumSets instead of bit fields
+
+Annotations:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-Prefer Annotations to Naming Patterns
+	-JUnit a major example
+-Consistently use @Override
+	-Makes sure you are actually overriding
+	-Especially for equals, toString, hashCode
+
+Use Marker Interfaces to Define Types:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-A marker interface is one with no methods
+-Serializable is an example
+	-Indicates object can be written via ObjectOutputStream
+
+Upon Reflection:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+-reflectin is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime
+-allows inspection of classes, interfaces, fields and methods at runtime
+-it also allows instantiation of new objects and invocation of methods
+-Reflection is often used as part of software testing, such as for the runtime creation/instantiation of mock objects
+-JUnit,Spring (a web framework), Struts, Hibernate (an object relational framework)
+-Information on 
+	-Classes and inheritance
+	-Methods (and constructors)
+	-Fields
+	-Modifiers
+-Can call
+	-Methods (and constructors)
+-Can change fields and modifiers
+-Can't add/delete classes, fields, or methods
+-import java.lang.reflect.Modifier;...
+	public class Reflect
+	classes.. abstract class... main-->throws exceptions
+-Very powerful, but has security concerns
+-If you're writing a framework you have to use reflection
+-In general modifying the final variables of an object behind its back is a bad idea. 
 
 
 
