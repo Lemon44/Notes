@@ -312,7 +312,7 @@ Minimize the Accessibility of Classes and Members:
 	-Are not thread-safe
 -Arrays are always mutable
 	-Never have a public static final array field
-	-Or an accessor that retruns such a beast
+	-Or an accessor that returns such a beast
 	-Be careful of IDE's that create accessors automatically
 **if you are returning an array, return the copy of the array, for security
 
@@ -422,7 +422,7 @@ Prefer Interfaces to Abstract Classes:
 	-Useful for polymorphism
 	-Know what methods are available to client, which in general define a type
 -Can create skeletal implementation for each interface
-	-Generally call AbstactInterface(SkeletonInterface might be better)
+	-Generally call AbstractInterface(SkeletonInterface might be better)
 	-AbstractCollection, Map, List, Set
 -Abstract classes do permit multiple implementations
 	-Easier to evolve
@@ -603,7 +603,7 @@ Use Marker Interfaces to Define Types:
 Upon Reflection:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
--reflectin is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime
+-reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime
 -allows inspection of classes, interfaces, fields and methods at runtime
 -it also allows instantiation of new objects and invocation of methods
 -Reflection is often used as part of software testing, such as for the runtime creation/instantiation of mock objects
@@ -628,7 +628,7 @@ Check Parameters for Validity:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -most parameters have restrictions on their validity
-	-positive, non-null, zero-lenth, etc. 
+	-positive, non-null, zero-length, etc. 
 -AKA preconditions
 -Program defensively
 -Catch problems as soon as possible 
@@ -717,12 +717,12 @@ Prefer Lambdas to Anonymous Classes:
 -Java 8 introduced functional interfaces
 	-Lambda expressions
 	-Method references
--Historically: we had to create an anoymous class, but it's a little painful, but all we really want is the function
+-Historically: we had to create an anonymous class, but it's a little painful, but all we really want is the function
 -Lambdas ("->")
 -Method Reference ("String :: length")
 -Example in book:
 	import java.util.function.DoubleBinaryOperator;
-		public enum Operaton {
+		public enum Operation {
 			PLUS ("+", (x,y) -> x + y),
 			MINUS ("-", (x,y) -> x -y),
 -"First Class Objects"
@@ -778,7 +778,7 @@ Filer,Map,Peek:
 
 Stream.of("one", "two", "three", "four")
 	.filter(e -> e.length() > 3) 
-	.peek(e -> System.out.println("Filetered value: " + e)) 
+	.peek(e -> System.out.println("Filtered value: " + e)) 
 	.map (String :: toUpperCase)
 	.peek(e -> System.out.println("Mapped value: " + e))
 	.collect(Collectors.toList());
@@ -821,7 +821,7 @@ Use Streams Judiciously
 -Best for transforming, filtering, combining, accumulating, searching a series of data
 
 try (Stream <String> words = Files.lines(dictionary)) {
-	words.collect(groupingBy(word - > alphabetie(word)))
+	words.collect(groupingBy(word - > alphabetize(word)))
 	.values()
 	.stream()
 	.filter(group -> group.size() >= minGroupSize)
@@ -863,7 +863,7 @@ Use Exceptions only for Exceptional Conditions
 		-Checked Exceptions
 		-Runtime Exceptions
 		-Errors
--Checked exceptions require client to catch or propogate
+-Checked exceptions require client to catch or propagate
 
 Runtime Exceptions and Errors:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -899,7 +899,7 @@ Throw Exceptions Appropriate to the Abstraction:
 Document all Exceptions thrown by each Method:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
--Declare all checked excpetions individually
+-Declare all checked exceptions individually
 -Document precisely the conditions one is thrown
 -Use @throws for checked, but not for unchecked
 
@@ -959,16 +959,3 @@ REplican:
 
 -a web replicator based on regular expressions
 -Regular expressions allow either great specificity or generality, giving you a lot of power to retrieve whatever you wish from 
-
-
-
-
-
-
-
-
-
-
-
-
-

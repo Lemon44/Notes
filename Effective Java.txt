@@ -64,9 +64,9 @@ ADVANTAGES of static factory methods:
 	1. Service Interface: which represents an implementation.
 	2. Provider Registration API: which providers use to register implementations.
 	3. Service Access API: which clients use to obtain instances of the service. 
--Service Access API: may allow clients to specify criteria for choosing an implementation. If no criteria is provided, it retirns an instance of a default implementation or allows the client to cycle through all available implementations. It is a static factory that forms the basis of the service provider framework. 
+-Service Access API: may allow clients to specify criteria for choosing an implementation. If no criteria is provided, it returns an instance of a default implementation or allows the client to cycle through all available implementations. It is a static factory that forms the basis of the service provider framework. 
 	4. Service  Provider Interface: which describes a factory object that produce instances of the service interface. 
--In the absense of a service provider interface, implementations must be instantiated reflectively. 
+-In the absence of a service provider interface, implementations must be instantiated reflectively. 
 
 LIMITATIONS of static factory methods: [PAGE 26]
 

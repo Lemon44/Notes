@@ -1,0 +1,33 @@
+Luke's Presentation:
+
+from unittest import mock
+
+def say_the_truth():
+	answer = input("What is the question?")
+	if answer == "":
+		return "the truth"
+	return "the truth about " + answer
+
+def test_say_the_truth():
+	with mock.patch('builtins.input') as mocked_input:
+		mocked_input.side_effect == ["", "the streets"]
+		assert say_the_truth() == "the truth"
+		assert say_the_truth() == "the truth about the streets"
+		assert mocked_input.call_count == 2
+
+
+def runtests():
+		test_say_the_truth()
+
+if __name__ == '__main__':
+	runtest()
+
+How to do this with pytest... requirements-dev.txt
+	pytest - mock
+conftest.py
+@pytest.fixture
+def run(capys, mocker):
+
+database connections, input/output from a user.
+
+I'm going to run my method, can I understand what I expect to come out. 
