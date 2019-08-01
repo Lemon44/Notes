@@ -395,7 +395,7 @@ Inheritance:
 -Is every instance of a subclass really an instance of the superclass?
 	-If not, have a private instance of the referred-to class
 
-Desing and Document for Inheritance:
+Designing and Document for Inheritance:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 -The only way to test a class designed for inheritance is to write a subclasses
@@ -562,7 +562,7 @@ When to Use:
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 [CHAPTER 6]:
 
-Use Enumberations Instead of Integer Constants:
+Use Enumerations Instead of Integer Constants:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 Java:

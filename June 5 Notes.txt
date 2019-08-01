@@ -33,7 +33,7 @@ Mariner 1:
 Space-craft that went way off course. 
 "The most consistent account was that the error was in hand-transcription of a mathematical symbol in the program specification, in a particular a missing overbar." (instead of taking an average, they used an instantaneous value). 
 
-Voltswagon Emissions Scandel: error in emissions testing
+Voltswagon Emissions Scandal: error in emissions testing
 
 Professional Engineers: Software Engineers could potentially be required to take an extra 5 years of training to become a PE, to reduce the inconsitencies, bugs, mistakes, etc. Raise Standards!
 
